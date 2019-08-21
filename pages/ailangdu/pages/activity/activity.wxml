@@ -1,0 +1,124 @@
+<view class="header">
+  <text>{{title}}</text>
+  <view class='reton_sun' bindtap='topshoop'>
+    <image src='/pages/main/images/shopping/arowLt.png' class='reton'></image>
+  </view>
+</view>
+<view class="banner">
+  <swiper indicator-dots="true">
+
+    <swiper-item; wx:for="{{imglist}}">
+      <image src='{{item.image}}'></image>
+      </swiper-item>
+  </swiper>
+</view>
+<view class="time">
+  <view class="content_box">
+    <view class="name">
+      <text>活动时间</text>
+    </view>
+    <view class="text">
+      <text>{{active_time}}--{{end_time}}</text>
+    </view>
+  </view>
+</view>
+<view class="introduce">
+  <view class="content_box">
+    <view class="name">
+      <text>活动介绍</text>
+    </view>
+    <view class="text">
+      <text>{{introduction}}</text>
+    </view>
+  </view>
+</view>
+<view class="works">
+  <view wx:if="{{type!=3}}" class="title">
+    <text>参赛作品</text>
+  </view>
+  <view class="tabs" wx:else>
+    <text bindtap="changeTab" data-type="2" class="tab-left {{tabType==2?'tab-left-active':''}}">优秀作品</text>
+    <text bindtap="changeTab" data-type="3" class="tab-right {{tabType==3?'tab-left-active':''}}">获奖作品</text>
+  </view>
+  <view class="content_box">
+    <view bindtap="toListen" data-praisenum="{{item.luyin_praisenum}}" data-luyin="{{item.luyin_id}}" data-audio="{{item.audio_id}}"  wx:for="{{project_list}}" class="list">
+      <view class="photo">
+      <image style="height: 90rpx;width:90rpx;" src="{{item.avatar}}"></image>
+      </view>
+      <view class="text_box">
+        <view class="name">
+          <text>{{item.audio_name}}</text>
+        </view>
+        <view class="text">
+          <view class="author">
+            <image src="/pages/ailangdu/images/maikefeng.png"></image>
+            <text>{{item.nickname}}</text>
+            <view class="clearfix"></view>
+          </view>
+          <view class="dianzan">
+            <image src="/pages/ailangdu/images/dianzan.png"></image>
+            <text>{{item.luyin_praisenum}}</text>
+            <view class="clearfix"></view>
+          </view>
+          <view class="clearfix"></view>
+        </view>
+      </view>
+      <view class="clearfix"></view>
+    </view>
+  </view>
+</view>
+<block wx:if="{{accessStatus==2}}">
+  <!-- 活动进行中且未参赛 -->
+  <block wx:if="{{playStatus==1}}">
+    <view bindtap="goReadList" class="kechanyu show_box">
+      <text>立即参与</text>
+    </view>
+  </block>
+  <!-- 活动评选中且未参赛 -->
+  <block wx:if="{{playStatus==2}}">
+    <view class="timeout show_box">
+      <text>不在参赛时间内</text>
+    </view>
+  </block>
+  <!-- 活动已结束且未参赛 -->
+  <block wx:if="{{playStatus==3}}">
+    <view class="timeout show_box">
+      <text>您未参加该比赛</text>
+    </view>
+  </block>
+</block>
+<block wx:else>
+  <view bindtap="toListen" data-praisenum="{{played_data.luyin_praisenum}}" data-luyin="{{played_data.luyin_id}}" data-audio="{{played_data.audio_id}}" class="works_sun">
+    <view class="photo">
+     <image style="height: 90rpx;width:90rpx;" src="{{played_data.avatar}}"></image>
+    </view>
+    <view class="text_box">
+      <view class="name">
+        <text>{{played_data.audio_name}}</text>
+      </view>
+      <view class="text">
+        <view class="author">
+          <image src="/pages/ailangdu/images/maikefeng.png"></image>
+          <text>{{played_data.nickname}}</text>
+          <view class="clearfix"></view>
+        </view>
+        <view class="dianzan">
+          <image src="/pages/ailangdu/images/dianzan.png"></image>
+          <text>{{played_data.luyin_praisenum}}</text>
+          <view class="clearfix"></view>
+        </view>
+        <view class="clearfix"></view>
+      </view>
+    </view>
+    <view class="clearfix"></view>
+  </view>
+</block>
+<!-- <view class="timeout {{playStatus==2?'show_box':''}}">
+  <text>不在参赛时间内</text>
+</view>
+<view class="timeout {{playStatus==3?'show_box':''}}">
+  <text>您未参加该比赛</text>
+</view>
+<view class="weichanyu {{accessStatus==2?'show_box':''}}">
+  <text>您未参与该比赛</text>
+</view> -->

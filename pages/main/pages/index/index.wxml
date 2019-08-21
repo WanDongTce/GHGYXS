@@ -1,0 +1,47 @@
+<!--pages/ailangdu//pages/index/index.wxml-->
+<!-- navigation -->
+<navbar title="爱朗读" isShowBack="{{false}}" url=""></navbar>
+<!-- swiper -->
+<view class="banner">
+  <swiper class="swiper-wrap" display-multiple-items='1' circular interval="{{2000}}" duration="{{1000}}" previous-margin="30" next-margin="30" bindchange="change">
+    <block wx:for="{{imgUrls}}" wx:key="{{item.id}}">
+      <swiper-item class="swiper-item" data-id="{{currentSwiper}}" data-index="{{index}}">
+        <view class="image-box"><image mode="aspectFit" class="slide-image {{index==currentSwiper?'swiper-active':'disabled'}}" src="{{item.image}}" height="500" /></view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<!-- 入口 -->
+<view class="icon-nav">
+  <navigator url="/pages/dayuwen/pages/songdetail/songdetail" class="icon-nav-left">
+    <image class="icon-img" src="../../images/index/icon-nav1@2x.png"></image>
+    <text class="nav-text">诗歌朗读</text>
+  </navigator>
+  <navigator url="/pages/ailangdu/pages/Match/Match" class="icon-nav-right">
+    <image class="icon-img" src="../../images/index/icon-nav2@2x.png"></image>
+    <text class="nav-text">诗歌比赛</text>
+  </navigator>
+</view>
+<!-- 列表 -->
+<view class="action">
+    <text bindtap="changeTab" data-type="1" class="action-text {{current==1?'action-active':''}}">热门</text>
+    <text bindtap="changeTab" data-type="2" class="action-text {{current==2?'action-active':''}}">推荐</text>
+  </view>
+<scroll-view scroll-y>
+  <view class="list" bindtap="toListen" data-praisenum="{{item.praisenum}}" data-luyin="{{item.id}}" data-audio="{{item.audio_id}}" wx:key='{{item.id}}'  wx:for="{{list}}">
+    <view class="list-item">
+      <text class="item-title">{{item.audio_name}}</text>
+      <view class="item-rel">
+        <view class="item-span">
+          <image class="item-rel-icon" src="../../images/index/maikefeng@2x.png"></image>
+          <text class="item-rel-icon-text">{{item.nickname}}</text>
+        </view>
+        <view class="item-span">
+          <image class="item-rel-icon" src="../../images/index/dianzan@2x.png"></image>
+          <text class="item-rel-icon-text">{{item.praisenum}}</text>
+        </view>
+      </view>
+    </view>
+    
+  </view>
+</scroll-view>

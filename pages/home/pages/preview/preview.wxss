@@ -1,0 +1,111 @@
+.cont-box{
+    width: 100%;
+    /* margin-top: 17vh; */
+    margin-top: 8vh;
+    overflow: hidden;
+}
+.cont-item{
+    width: 100%;
+    padding: 30rpx 24rpx;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background: #fff;
+    border-bottom: 1rpx solid #dfdfdf;
+}
+.cont-item:last-child{
+    border-bottom: none;
+}
+.itm-lt{
+    width: 95%;
+    display: flex;
+    display: -webkit-flex;
+    align-items: flex-start;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.lt-img{
+    /* width: 8%; */
+    width: 54rpx;
+    height: 54rpx;
+    margin-right: 22rpx;
+    font-size: 30rpx;
+    color: #fff;
+    text-align: center;
+    line-height: 54rpx;
+    border-radius: 15rpx;
+}
+
+.lt-text{
+    width: 90%;
+    overflow: hidden;
+}
+.lt-text .tit{
+    width: 100%;
+    font-size: 28rpx;
+    color: #454545;
+    line-height: 1.5em;
+    margin-bottom: 15rpx;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.lt-text .sub{
+    width: 100%;
+    font-size: 22rpx;
+    color: #999;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    line-height: 1.2em;
+}
+.rt-img{
+    /* width: 2%; */
+    width: 14rpx;
+    height: 22rpx;
+}
+/*收费提示*/
+.center {
+  width: 80%;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 12rpx;
+}
+.popwrap{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding-bottom: 40rpx;
+}
+.popwrap-img{
+  margin-bottom: 30rpx;
+  overflow: hidden;
+}
+.pop-text{
+  font-size: 28rpx;
+  margin-bottom: 40rpx;
+  color: #666;
+}
+.pop-btn{
+margin-bottom: 30rpx;
+border-width: 0;
+width: 60%;
+background-color: #4BACE2;
+color: white;
+border-radius: 46rpx;
+}
+.pop-btn-outline{
+  background-color: white;
+  color: #4BACE2;
+  border: 1px solid #4BACE2;
+}
+button.pop-btn::after{
+  content: "";
+}
+.isvip{
+  overflow: hidden;
+}

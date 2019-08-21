@@ -1,0 +1,83 @@
+.clearfix{clear: both}
+.reton{width: 18rpx;height: 32rpx;z-index: 999999;display: block;padding-top: 40rpx;margin: 0 auto}
+.header{text-align: center}
+.header text{display: block}
+.reton_sun{width: 100rpx;height: 100rpx;position: absolute;left: 4rpx;top: 30rpx;}
+.header{position: fixed;left: 0;top: 0;line-height: 13vh;height: 10vh;display: block;width: 100%;background-color: #fff;border: 1px solid #dfdfdf;z-index: 999}
+.banner image{width: 750rpx;height:320rpx }
+.time{margin-top: 60rpx}
+.time .content_box{width: 686rpx;margin: 0 auto;}
+.time .content_box .name text{font-size: 32rpx;font-weight: bold;color: #333333;height: 32rpx;line-height: 32rpx;
+border-left: 8rpx solid #F8BD30;padding-left: 16rpx}
+.time .content_box .text{margin-top: 32rpx}
+.time .content_box .text text{font-size: 32rpx;height: 32rpx;line-height: 32rpx;color: #666666}
+.introduce{margin-top: 60rpx}
+.introduce .content_box{width: 686rpx;margin: 0 auto;}
+.introduce .content_box .name text{font-size: 32rpx;font-weight: bold;color: #333333;height: 32rpx;line-height: 32rpx;
+border-left: 8rpx solid #F8BD30;padding-left: 16rpx}
+.introduce .content_box .text{margin-top: 32rpx}
+.introduce .content_box .text text{font-size: 32rpx;height: 32rpx;line-height: 32rpx;color: #666666}
+.works .title{width: 196rpx;margin: 0 auto;background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYYAAABACAYAAAAeRtD4AAAACXBIWXMAAAsTAAALEwEAmpwYAAAHN2lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDUgNzkuMTYzNDk5LCAyMDE4LzA4LzEzLTE2OjQwOjIyICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdEV2dD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlRXZlbnQjIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIiB4bWxuczpwaG90b3Nob3A9Imh0dHA6Ly9ucy5hZG9iZS5jb20vcGhvdG9zaG9wLzEuMC8iIHhtcDpDcmVhdGVEYXRlPSIyMDE5LTA3LTIzVDE1OjA4OjE5KzA4OjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDE5LTA3LTIzVDE1OjA4OjE5KzA4OjAwIiB4bXA6TW9kaWZ5RGF0ZT0iMjAxOS0wNy0yM1QxNTowODoxOSswODowMCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDplMDZmZDFlNS1hMzE0LTExNDMtYjcyOS1jYmI4MGVjMDI1NzkiIHhtcE1NOkRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDo3Y2NlMGZhOS1kMmZmLTMwNDEtYmY2Ny0zZGM3MDZkYTZlNzMiIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDozYjhlZTMxMS1jZWU1LWJjNDgtYWM5My0xMmIwMTMzNmRjM2YiIGRjOmZvcm1hdD0iaW1hZ2UvcG5nIiBwaG90b3Nob3A6Q29sb3JNb2RlPSIzIj4gPHhtcE1NOkhpc3Rvcnk+IDxyZGY6U2VxPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6M2I4ZWUzMTEtY2VlNS1iYzQ4LWFjOTMtMTJiMDEzMzZkYzNmIiBzdEV2dDp3aGVuPSIyMDE5LTA3LTIzVDE1OjA4OjE5KzA4OjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOSAoV2luZG93cykiIHN0RXZ0OmNoYW5nZWQ9Ii8iLz4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImRlcml2ZWQiIHN0RXZ0OnBhcmFtZXRlcnM9ImNvbnZlcnRlZCBmcm9tIGFwcGxpY2F0aW9uL3ZuZC5hZG9iZS5waG90b3Nob3AgdG8gaW1hZ2UvcG5nIi8+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJzYXZlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDplMDZmZDFlNS1hMzE0LTExNDMtYjcyOS1jYmI4MGVjMDI1NzkiIHN0RXZ0OndoZW49IjIwMTktMDctMjNUMTU6MDg6MTkrMDg6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE5IChXaW5kb3dzKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8L3JkZjpTZXE+IDwveG1wTU06SGlzdG9yeT4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6M2I4ZWUzMTEtY2VlNS1iYzQ4LWFjOTMtMTJiMDEzMzZkYzNmIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjNiOGVlMzExLWNlZTUtYmM0OC1hYzkzLTEyYjAxMzM2ZGMzZiIgc3RSZWY6b3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOjNiOGVlMzExLWNlZTUtYmM0OC1hYzkzLTEyYjAxMzM2ZGMzZiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pl5usc0AAARbSURBVHja7d25i51VGMfxb64WGtHCIgaNWgTBuIA46bK4YDSd0SioGS31v4hK/gpTxiwqLsQuCmo06WbUwg2MRdxQCwsFF1xikQxewr33eZdznvctvp9mIPe8ZOCB348z75wz61ZWVqjofuAk8Oe8BUtLS0iS/re6ujpoLk8q/uc3AyeA74EXgG3AOkcuSYNplMs1i2H5wtergaeBU8CXwPPAZucjSeka5XKtYphMfQPTNgP7gTPAs85IktI0zuVaxbADuDFYc9o5SVKaxrlcqxieDD7/DnjHOUlSmsa5XKMYLgMeDdYcBf51TpKUolUu1yiGB4GrgjWHnJMkpWmVyzWKYTn4/GPgE+ckSWla5XLpYtgA7A7WvOiMJClN61wuXQyPAZcu+Pwfzv8cS5KUo3Uuly6G6K3328APzkmS0rTO5ZLFsAXYGqw57IwkKU2nXC5ZDFEr/Qq84ZwkaTS7hZm5XKoYJsC+YM3rwG/OSZJSdM7lUsWwE7ghWONvI0lSns65XKoYou3Kt8C7zkmS0nTO5RLFcDnwSLDmCF6BIUlZeuVyiWJoctTaHyNJUp5euVyiGKLtykfAp85JktL0yuW+xbCB838/1N2CJI1D71zuWwyPs/io9d/AMeckSWl653LfYvAKDEkal9653KcYbgGW+mxXJElFFcnlPsXQ5Kj1ceckSaPZLTTK5a7F0OSo9Wt4BYYkZSmWy12L4S7g+r7bFUlSMcVyuWsxRNuVb4D3nJMkpSmWy12KYT2wN1jjFRiSlKdoLncpBq/AkKRxKZrLXYoh2q58CHzmnCQpTdFcblsM1wC73C1I0mgUz+W2xeAVGJI0LsVzuW0xRNuVt4AfnZMkpSmey22K4VbgzpLbFUlSL1VyuU0xRK30C/Cmc5Kk0ewWOuXypMW6J4I1XoEhSXmq5XLTYrgbr8CQpDGplstNi+Gp4POvgZPOSZLSVMvlJsWwHng4WOMVGJKUp2ouNymGPcCVwZrDzkmS0lTN5SbFEL31XsUrMCQpU9VcjophI3BfsOaQM5KkNNVzOSqGJketX3JOkpSmei5HxRC99T4B/OScJClN9VxeVAy3AXcEz3t2QZLypOTyomLwCgxJGpeUXJ4s+PfoqPWrwO/OSZJSpOXyvGK4B9gUPOtvI0lSnrRcnlcM0cuNs8AHzkmS0qTl8qxiuAJ4KHjOKzAkKU9qLs8qhj14BYYkjUlqLs8qhuXgmRXgc+ckSWlSc/niYtgI7Aqe8aWzJOVJz+WLi2EfcMmC9X8BLzsnSUqTnsuTltsVr8CQpFzpuTxdDLcTH7X2pbMk5Rkkl6eLoclR6+POSZLSDJLLk6mv0VHrV4A/nJMkpRgsl9eK4V7guuztiiRprsFyea0YtgfrzgLvOydJSjNYLq8Vw3PATcAB4Ks5rXTOOUlSmsFyefrl8xlg/4VvZDtwEPi55nZFkrTQILk860qMc8Bp4BngWuAB4AvnI0mDSc3l/wBtaenkcB/bzQAAAABJRU5ErkJggg==);background-size: 196rpx 32rpx;
+text-align: center;background-position: center;background-repeat: no-repeat}
+.works{margin-top: 60rpx;margin-bottom: 140rpx;margin-bottom: 170rpx}
+.works .title text{font-size: 32rpx;color: #333333}
+.works .content_box{width: 686rpx;margin: 0 auto;margin-top: 32rpx}
+.works .content_box .list{ width: 100%;height: 150rpx;background-color: #fff;margin-bottom: 24rpx}
+.works .content_box .list .photo{background-color: #dfdfdf;width: 88rpx;height: 88rpx;border-radius: 50%;margin-top:30rpx;margin-left: 30rpx;float:left}
+.works .content_box .list .text_box{float: left;margin-left: 24rpx;width: 514rpx;}
+.works .content_box .list .text_box .name{padding-top: 30rpx}
+.works .content_box .list .text_box .name text{font-size: 32rpx;color: #333333;height: 32rpx;line-height: 32rpx;
+}
+.works .content_box .list .text_box .text .author image{width: 20rpx;height: 28rpx;float: left;margin-right: 18rpx}
+.works .content_box .list .text_box .text .author  text{font-size: 24rpx;color: #999999;display: block;float: left}
+.works .content_box .list .text_box .text .author{float: left;width: 33.3%}
+.works .content_box .list .text_box .text .shijian image{width: 26rpx;height: 26rpx;float: left;margin-right: 18rpx}
+.works .content_box .list .text_box .text .shijian  text{font-size: 24rpx;color: #999999;display: block;float: left}
+.works .content_box .list .text_box .text .shijian{float: left;width: 33.3%}
+.works .content_box .list .text_box .text .dianzan image{width: 26rpx;height: 26rpx;float: left;margin-right: 18rpx}
+.works .content_box .list .text_box .text .dianzan  text{font-size: 24rpx;color: #999999;display: block;float: left}
+.works .content_box .list .text_box .text .dianzan{float: left;width: 33.3%}
+.works .content_box .list .text_box .text{margin-top: 15rpx}
+.kechanyu{position: fixed;left: 0;bottom: 0;width: 100%;background-color: #4BACE2;display: none}
+.kechanyu text{font-size: 34rpx;text-align: center;display: block;line-height: 100rpx;color: #fff}
+
+.timeout{position: fixed;left: 0;bottom: 0;width: 100%;background-color: #CCCCCC;display: none}
+.timeout text{font-size: 34rpx;text-align: center;display: block;line-height: 100rpx;color: #fff}
+
+.weichanyu{position: fixed;left: 0;bottom: 0;width: 100%;background-color: #CCCCCC;display: none}
+.weichanyu text{font-size: 34rpx;text-align: center;display: block;line-height: 100rpx;color: #fff}
+.show_box{display: block}
+
+
+
+.works_sun{position: fixed;left: 0;bottom: 0;width: 100%;background-color: #fff;padding-bottom: 30rpx}
+.works_sun   .photo{background-color: #dfdfdf;width: 72rpx;height: 72rpx;border-radius: 50%;margin-top:30rpx;margin-left: 64rpx;float:left}
+.works_sun   .text_box{float: left;margin-left: 24rpx;width: 514rpx;}
+.works_sun   .text_box .name{padding-top: 30rpx}
+.works_sun   .text_box .name text{font-size: 26rpx;color: #333333;height: 26rpx;line-height: 26rpx;
+}
+.works_sun   .text_box .text .author image{width: 20rpx;height: 28rpx;float: left;margin-right: 18rpx}
+.works_sun   .text_box .text .author  text{font-size: 24rpx;color: #999999;display: block;float: left}
+.works_sun   .text_box .text .author{float: left;width: 33.3%}
+.works_sun  .text_box .text .shijian image{width: 26rpx;height: 26rpx;float: left;margin-right: 18rpx}
+.works_sun   .text_box .text .shijian  text{font-size: 24rpx;color: #999999;display: block;float: left}
+.works_sun   .text_box .text .shijian{float: left;width: 33.3%}
+.works_sun   .text_box .text .dianzan image{width: 26rpx;height: 26rpx;float: left;margin-right: 18rpx}
+.works_sun   .text_box .text .dianzan  text{font-size: 24rpx;color: #999999;display: block;float: left}
+.works_sun   .text_box .text .dianzan{float: left;width: 33.3%}
+.works_sun   .text_box .text{margin-top: 15rpx}
+.tabs{
+  display: flex;
+  justify-content: center;
+  color: #666666;
+  font-size: 32rpx;
+}
+.tab-left{
+  margin-right: 50rpx;
+}
+.tab-right{
+  margin-left: 50rpx;
+}
+.tab-left-active{
+  color: #4BACE2;
+}

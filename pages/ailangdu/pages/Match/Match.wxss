@@ -1,0 +1,30 @@
+page{background-color: #FAF9F9}
+.clearfix{clear: both}
+.reton{width: 18rpx;height: 32rpx;z-index: 999999;display: block;padding-top: 40rpx;margin: 0 auto}
+.header{text-align: center}
+.header text{display: block}
+.reton_sun{width: 100rpx;height: 100rpx;position: absolute;left: 4rpx;top: 30rpx;}
+.header{position: fixed;left: 0;top: 0;line-height: 13vh;height: 10vh;display: block;width: 100%;background-color: #fff;border: 1px solid #dfdfdf;z-index: 999}
+.btn{margin-top: 40rpx}
+.btn .content_box{width:686rpx;margin: 0 auto }
+.btn .content_box .brn_sun{width: 33.3%;float: left;text-align: center}
+.btn .content_box .brn_sun text{display: inline-block;font-size: 28rpx;color: #333333;padding-bottom: 16rpx}
+.btn .content_box .color text{border-bottom: 4rpx solid #4BACE2}
+.list_box{margin-top: 24rpx}
+.list_box .content_box{width:686rpx;margin: 0 auto }
+.list_box .content_box .list{ width: 100%;background-color: #fff;margin-bottom: 34rpx;border-radius: 16rpx;position: relative}
+.list_box .content_box .list .logo{position: absolute;top: 0;right: 0;width: 124rpx;height: 128rpx;display: none}
+.list_box .content_box .list .show{display: block}
+.list_box .content_box .list .photo{width: 622rpx;height: 240rpx;margin: 0 auto;border-radius: 16rpx;overflow: hidden}
+.list_box .content_box .list {padding-top: 32rpx}
+.list_box .content_box .list .photo image{width: 100%;height: 100%}
+.list_box .content_box .list .text_box{width: 622rpx;margin: 0 auto;margin-top: 34rpx}
+.list_box .content_box .list .text_box .name text{font-size: 32rpx;color: #333;height: 32rpx;line-height: 32rpx;display: inline-block}
+.list_box .content_box .list .text_box .time text{font-size: 26rpx;color: #333;height: 32rpx;line-height: 32rpx;display: inline-block;padding-bottom: 34rpx;color: #999}
+.visited{
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  right: 0;
+  top: 0;
+}

@@ -1,0 +1,39 @@
+/* pages/ailangdu//pages/readList/readList.wxss */
+
+.list {
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx 30rpx;
+}
+
+.list-item {
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+  border-radius: 8rpx;
+  background-color: white;
+  display: flex;
+}
+
+.list-item-avatar {
+  width: 104rpx;
+  height: 104rpx;
+  border-radius: 8rpx;
+  background-color: #ccc;
+  margin-right: 15rpx;
+}
+.list-item-right{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.title{
+  font-size: 32rpx;
+  color: #333;
+}
+.item-meta{
+  font-size: 28rpx;
+  color: #999;
+}
+.meta-reign{
+  margin-right: 30rpx;
+}

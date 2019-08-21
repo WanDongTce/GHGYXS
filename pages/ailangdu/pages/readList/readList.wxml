@@ -1,0 +1,14 @@
+<!--pages/ailangdu//pages/readList/readList.wxml-->
+<navbar title="选择诗歌朗读参赛" isShowBack="true" url=""></navbar>
+<view class="list">
+  <view bindtap="gorecorder" data-id="{{item.id}}" data-author="{{item.readname}}" data-rname="{{item.rname}}" wx:for="{{list}}" wx:key="{{item.id}}" class="list-item">
+    <image class="list-item-avatar" src="{{item.imgUrl}}"></image>
+    <view class="list-item-right">
+      <text class="title">{{item.rname}}</text>
+      <view class="item-meta">
+        <text class="meta-reign">{{item.cname}}</text>
+        <text class="meta-author">{{item.readname}}</text>
+      </view>
+    </view>
+  </view>
+</view>

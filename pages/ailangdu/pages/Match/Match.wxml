@@ -1,0 +1,39 @@
+<view class="header"><text>朗读比赛</text><view class='reton_sun' bindtap='topshoop'>
+<image src='/pages/main/images/shopping/arowLt.png' class='reton'></image></view></view>
+
+<view class="btn">
+  <view class="content_box">
+    <view class="brn_sun {{currentTab==1?'color':''}}" data-current="1" catchtap="current">
+      <text>进行中</text>
+    </view>
+    <view class="brn_sun {{currentTab==2?'color':''}}" data-current="2" catchtap="current">
+      <text>评选中</text>
+    </view>
+    <view class="brn_sun {{currentTab==3?'color':''}}" data-current="3" catchtap="current">
+      <text>已结束</text>
+    </view>
+    <view class="clearfix"></view>
+  </view>
+</view>
+<view class="list_box">
+  <view class="content_box">
+    <view class="list" catchtap="to_activity" wx:for="{{list}}" data-postad="{{item.id}}" data-title="{{item.title}}">
+    <block wx:if="{{item.is_participate==1}}">
+      <image class="visited" src="../../images/played.png"></image>
+    </block>
+      <view class="photo">
+        <image src="{{item.image}}"></image>
+      </view>
+      <view class="text_box">
+        <view class="name">
+          <text>{{item.title}}</text>
+        </view>
+         <view class="time">
+          <text>截止日期：{{item.end_time}}</text>
+        </view>
+      </view>
+      <image src="/pages/ailangdu/images/Match.png" class="logo {{item.is_participate==1?'show':''}}"></image>
+    </view>
+   
+  </view>
+</view>
