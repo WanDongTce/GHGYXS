@@ -4,12 +4,16 @@
 <view class="btn">
   <view class="content_box">
     <view class="brn_sun {{currentTab==1?'color':''}}" data-current="1" catchtap="current">
+<image src="{{currentTab==1?'http://m.54xuebaxue.com/wx_img/img/dayuwen/Conduct02.png':'http://m.54xuebaxue.com/wx_img/img/dayuwen/Conduct01.png'}}"></image>
+      
       <text>进行中</text>
     </view>
     <view class="brn_sun {{currentTab==2?'color':''}}" data-current="2" catchtap="current">
+    <image src="{{currentTab==2?'http://m.54xuebaxue.com/wx_img/img/dayuwen/Selection02.png':'http://m.54xuebaxue.com/wx_img/img/dayuwen/Selection01.png'}}"></image>
       <text>评选中</text>
     </view>
     <view class="brn_sun {{currentTab==3?'color':''}}" data-current="3" catchtap="current">
+     <image src="{{currentTab==3?'http://m.54xuebaxue.com/wx_img/img/dayuwen/End02.png':'http://m.54xuebaxue.com/wx_img/img/dayuwen/End01.png'}}"></image>
       <text>已结束</text>
     </view>
     <view class="clearfix"></view>
@@ -17,22 +21,24 @@
 </view>
 <view class="list_box">
   <view class="content_box">
-    <view class="list" catchtap="to_activity" wx:for="{{list}}" data-postad="{{item.id}}" data-title="{{item.title}}">
-    <block wx:if="{{item.is_participate==1}}">
-      <image class="visited" src="../../images/played.png"></image>
-    </block>
-      <view class="photo">
+    <view class="list"  wx:for="{{list}}" >
+   <view class="box_sun" catchtap="to_activity" data-postad="{{item.id}}" data-title="{{item.title}}">
+     <view class="photo">
         <image src="{{item.image}}"></image>
       </view>
-      <view class="text_box">
+      <view class="text_box {{currentTab==3?'hide':''}}" >
         <view class="name">
-          <text>{{item.title}}</text>
+          <text wx:if="{{item.type==1}}">{{item.title}}<text>进行中...</text></text>
+          <text wx:if="{{item.type==2}}">{{item.title}}<text>评审中...</text></text>
         </view>
          <view class="time">
           <text>截止日期：{{item.end_time}}</text>
         </view>
       </view>
       <image src="/pages/ailangdu/images/Match.png" class="logo {{item.is_participate==1?'show':''}}"></image>
+      
+   </view>
+   <view class="bd {{currentTab==3?'show':''}}"></view>
     </view>
    
   </view>

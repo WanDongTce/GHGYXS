@@ -1,4 +1,4 @@
-page{background-color: #FAF9F9}
+page{background-color: #fff}
 .clearfix{clear: both}
 .reton{width: 18rpx;height: 32rpx;z-index: 999999;display: block;padding-top: 40rpx;margin: 0 auto}
 .header{text-align: center}
@@ -6,21 +6,30 @@ page{background-color: #FAF9F9}
 .reton_sun{width: 100rpx;height: 100rpx;position: absolute;left: 4rpx;top: 30rpx;}
 .header{position: fixed;left: 0;top: 0;line-height: 13vh;height: 10vh;display: block;width: 100%;background-color: #fff;border: 1px solid #dfdfdf;z-index: 999}
 .btn{margin-top: 40rpx}
-.btn .content_box{width:686rpx;margin: 0 auto }
-.btn .content_box .brn_sun{width: 33.3%;float: left;text-align: center}
-.btn .content_box .brn_sun text{display: inline-block;font-size: 28rpx;color: #333333;padding-bottom: 16rpx}
-.btn .content_box .color text{border-bottom: 4rpx solid #4BACE2}
+.btn .content_box{width:686rpx;margin: 0 auto;border: 2rpx solid #E2E2E2;border-radius: 15rpx;
+overflow: hidden}
+.btn .content_box .brn_sun{width: 33.1%;float: left;text-align: center;
+border-right: 2rpx solid #e2e2e2;}
+.btn .content_box .brn_sun:nth-child(3){border-right: 0}
+.btn .content_box .brn_sun text{display: block;font-size: 28rpx;color: #333333;
+float: left;line-height: 60rpx}
+.btn .content_box .brn_sun image{width: 26rpx;height: 26rpx;display: block;float: left;padding-top: 18rpx;
+margin-left: 28rpx;margin-right: 24rpx}
+.btn .content_box .color{background-color: #6DA6DD}
+.btn .content_box .color text{color: #fff}
 .list_box{margin-top: 24rpx}
-.list_box .content_box{width:686rpx;margin: 0 auto }
-.list_box .content_box .list{ width: 100%;background-color: #fff;margin-bottom: 34rpx;border-radius: 16rpx;position: relative}
+.list_box .content_box{width:710rpx;margin: 0 auto }
+.list_box .content_box .list{ width: 100%;background-color: #fff;margin-bottom: 34rpx;position: relative;border-radius: 8rpx;overflow: hidden}
 .list_box .content_box .list .logo{position: absolute;top: 0;right: 0;width: 124rpx;height: 128rpx;display: none}
 .list_box .content_box .list .show{display: block}
-.list_box .content_box .list .photo{width: 622rpx;height: 240rpx;margin: 0 auto;border-radius: 16rpx;overflow: hidden}
-.list_box .content_box .list {padding-top: 32rpx}
+.list_box .content_box .list .photo{width: 710rpx;height: 312rpx;margin: 0 auto;}
 .list_box .content_box .list .photo image{width: 100%;height: 100%}
-.list_box .content_box .list .text_box{width: 622rpx;margin: 0 auto;margin-top: 34rpx}
-.list_box .content_box .list .text_box .name text{font-size: 32rpx;color: #333;height: 32rpx;line-height: 32rpx;display: inline-block}
-.list_box .content_box .list .text_box .time text{font-size: 26rpx;color: #333;height: 32rpx;line-height: 32rpx;display: inline-block;padding-bottom: 34rpx;color: #999}
+.list_box .content_box .list .text_box{position: absolute;left: 0;bottom: 0;background-image: -moz-linear-gradient( 0deg, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0) 0%);
+  background-image: -webkit-linear-gradient( 0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);width: 100%;
+  height: 109rpx}
+.list_box .content_box .list .text_box .name text{font-size: 30rpx;color: #fff;height: 30rpx;line-height: 30rpx;display: block;padding-top: 13rpx;margin-left: 26rpx}
+.list_box .content_box .list .text_box .name text text{display: inline-block;font-size: 24rpx;line-height: 30rpx}
+.list_box .content_box .list .text_box .time text{font-size: 24rpx;color: #fff;height: 24rpx;line-height: 24rpx;display: block;padding-top: 19rpx;margin-left: 26rpx}
 .visited{
   width: 100rpx;
   height: 100rpx;
@@ -28,3 +37,7 @@ page{background-color: #FAF9F9}
   right: 0;
   top: 0;
 }
+.list_box .content_box .list .bd{position: absolute;left: 0;top: 0;width: 100%;height: 100%;
+background-color: rgba(0,0,0,0.7);display: none}
+.hide{display: none}
+.show{display: block !important; }

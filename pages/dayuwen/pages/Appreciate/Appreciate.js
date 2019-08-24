@@ -6,7 +6,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    text:""
+    text:"",
+    name:"",
+    author:"",
+    author02:""
   },
   topshoop: function () {
     wx.navigateBack({
@@ -34,7 +37,9 @@ Page({
         console.log(res.data)
         that.setData({
           text: res.data.data[0].item.translation,
-          
+          name: res.data.data[0] .item.rname,
+          author: res.data.data[0].item.cname,
+          author02: res.data.data[0].item.readname
         })
       }
     })

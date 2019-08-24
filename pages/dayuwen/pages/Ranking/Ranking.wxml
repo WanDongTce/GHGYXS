@@ -5,7 +5,7 @@
   <view class="information">
   <view class='content_box'>
     <view class='photo'>
-      <image src='{{pic}}'></image>
+      <image src='http://m.54xuebaxue.com/wx_img/img/dayuwen/photo.png'></image>
     </view>
     <view class='information_sun'>
       <view class='name'>
@@ -41,21 +41,42 @@
   </view>
   <view class='clearfix'></view>
 </view>
-<scroll-view class='{{selected?"show":"hidden"}}' bindscrolltolower="xiala" style="height:700rpx;" scroll-y="true">
-  <view class='list_box '  >
+<view class='box_one {{selected?"show":"hidden"}}'>
+    <view class='one '>
+      <view class="one_sun">
+        <text class="number">1</text>
+        <view class="photo">
+          <image src="{{one_img}}"></image>
+        </view>
+      </view>
+      <text class="Fabulous_sun">{{Fabulous_sun}}</text>
+    </view>
+    <view class='two '>
+      <view class="two_sun">
+        <text class="number">2</text>
+        <view class="photo">
+          <image src="{{two_img}}"></image>
+        </view>
+      </view>
+      <text class="Fabulous_sun">{{Fabulous_sun02}}</text>
+    </view>
+
+    <view class='three '>
+      <view class="three_sun">
+        <text class="number">3</text>
+        <view class="photo">
+          <image src="{{three_img}}"></image>
+        </view>
+      </view>
+      <text class="Fabulous_sun">{{Fabulous_sun03}}</text>
+    </view>
+</view>
+
+  <view class='list_box Fabulous {{selected?"show":"hidden"}}'  >
   <view class='content_box'>
-    <view class='list ' wx:for="{{list}}" data-index='{{index}}' catchtap='tolangdu02' data-postad="{{item.id}}"data-good='{{item.praisenum}}'>
+    <view class='list 'wx:if="{{index > 2}}" wx:for="{{list}}" data-index='{{index}}' catchtap='tolangdu02' data-postad="{{item.id}}"data-good='{{item.praisenum}}'>
       <view class='on'>
         <text>{{index+1}}</text>
-        <label wx:if="{{index==0}}">
-          <image src='/pages/dayuwen/images/one.png'></image>
-        </label>
-        <label wx:elif="{{index==1}}">
-          <image src='/pages/dayuwen/images/two.png'></image>
-        </label>
-         <label wx:elif="{{index==2}}">
-          <image src='/pages/dayuwen/images/three.png'></image>
-        </label>
       </view>
       <view class='photo'>
         <image src='{{item.avatar}}'></image>
@@ -72,10 +93,10 @@
   </view>
 </view>
 
-</scroll-view>
 
-<scroll-view class='{{selected1?"show":"hidden"}}' bindscrolltolower="xiala02" style="height:700rpx;" scroll-y="true">
-<view class='list_box '>
+
+
+<view class='list_box {{selected1?"show":"hidden"}} '>
   <view class='content_box'>
     <view class='list'wx:for="{{list_sun}}"  catchtap='tolangdu' data-postad="{{item.id}}" data-good='{{item.praisenum}}'>
       <view class='time'>
@@ -88,9 +109,9 @@
   </view>
 </view>
 
-</scroll-view>
 <view class='Recitation'>
-  <view class='btn_sun' bindtap='gorecorder' data-postad="{{pid}}" data-name="{{name}}" data-author="{{author}}">
+  <view class='btn_sun' bindtap='gorecorder' data-postad="{{pid}}" data-name="{{name}}" data-author="{{author}}"
+data-Dynasty="{{author02}}">
     <text>去朗诵</text>
   </view>
 </view>

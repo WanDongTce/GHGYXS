@@ -8,13 +8,7 @@
     <image class="btn" src="{{thumbnail}}" />
   </view>
 
-  <view class='btn_sun' wx:if="{{flg==true}}" bindtap='suspend'>
-  <image src='/pages/dayuwen/images/suspend02.png' class='suspend'></image>
  
-  </view>
-  <view class='btn_sun' wx:else bindtap='suspend'>
-     <image src='/pages/dayuwen/images/start02.png'  class='start02'></image>
-  </view>
 </view>
 
 <view class="text-wrap">
@@ -49,8 +43,21 @@
 	 color="#4BACE2"
 	 percentage="{{percent}}"
 	 custom-class="progress"
+   
 	/>
 </view>
+<view class="time">
+  <view class="long">{{tiem_wei}}</view>
+  <view class="indexsun">{{tiem_wei02}}</view>
+  <view class="clearfix"></view>
+</view>
+ <view class='btn_sun' wx:if="{{flg==true}}" bindtap='suspend'>
+  <image src='/pages/dayuwen/images/suspend02.png' class='suspend'></image>
+ 
+  </view>
+  <view class='btn_sun' wx:else bindtap='suspend'>
+     <image src='/pages/dayuwen/images/start02.png'  class='start02'></image>
+  </view>
 <view class="go-recite">
 	<button data-id="{{id}}" class="go-btn" bindtap="goTo">去朗诵</button>
 </view>

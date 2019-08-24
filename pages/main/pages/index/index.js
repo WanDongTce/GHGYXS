@@ -15,6 +15,13 @@ Page({
     currentSwiper: 0
  },
   //热门以及推荐
+  goTo: function (e) {
+    var postad = e.currentTarget.dataset.postad
+    console.log(postad)
+    wx.navigateTo({
+      url: '/pages/dayuwen/pages/Ranking/Ranking?id=' + postad 
+    })
+  },
   changeTab: function(e){
     if(e){
       let type = e.currentTarget.dataset.type;
@@ -43,7 +50,7 @@ Page({
       },
       success: function (res) {
         let hasMore = res.data.data[0].hasmore;
-        // console.log(hasMore);
+        console.log(res.data.data[0].list);
         if (!more){
           that.setData({
             list: res.data.data[0].list,

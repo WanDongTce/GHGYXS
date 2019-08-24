@@ -45,6 +45,7 @@ Page({
   //获取参赛作品列表
   getPlayedData: function(type){
     var that = this;
+    console.log(postId)
     wx.request({
       url: app.requestUrl + 'v9/activity/partner',
       data: {
@@ -99,7 +100,7 @@ Page({
         'content-type': 'application/x-www-form-urlencoded'
       },
       success: function (res) {
-        console.log(res.data.data[0].item)
+        console.log(res.data.data[0])
         that.setData({
           active_time: res.data.data[0].item.active_time,
           end_time: res.data.data[0].item.end_time,

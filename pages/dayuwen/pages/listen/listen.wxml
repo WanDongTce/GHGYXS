@@ -7,13 +7,7 @@
   <view class='bd'>
     <image class="btn" src="{{pic_sun}}" />
   </view>
-  <view class='btn_sun' wx:if="{{flg==true}}" bindtap='suspend'>
-  <image src='/pages/dayuwen/images/suspend02.png' class='suspend'></image>
- 
-  </view>
-  <view class='btn_sun' wx:else bindtap='suspend'>
-     <image src='/pages/dayuwen/images/start02.png'  class='start02'></image>
-  </view>
+  
 </view>
 
 <view class="text-wrap">
@@ -50,12 +44,27 @@
 	 custom-class="progress"
 	/>
 </view>
-
+<view class="time">
+  <view class="long">{{tiem_wei}}</view>
+  <view class="indexsun">{{tiem_wei02}}</view>
+  <view class="clearfix"></view>
+</view>
+<view class="btn_wei">
+<button class="share" open-type="share"></button>
+  <view class='btn_sun' wx:if="{{flg==true}}" bindtap='suspend'>
+  <image src='/pages/dayuwen/images/suspend02.png' class='suspend'></image>
+ 
+  </view>
+  <view class='btn_sun' wx:else bindtap='suspend'>
+     <image src='/pages/dayuwen/images/start02.png'  class='start02'></image>
+  </view>
+  <image catchtap='good' class="Give" src='{{already==2?"http://m.54xuebaxue.com/wx_img/img/dayuwen/Give.png":"http://m.54xuebaxue.com/wx_img/img/dayuwen/Give02.png"}}'></image>
+</view>
 
 <view class='footer'>
   <view class='list'>
     <image src='/pages/dayuwen/images/share.png'></image>
-    <button class="share" open-type="share">分享</button>
+    <button class="share" open-type="share"></button>
   </view>
   <view class='list' catchtap='good' >
 

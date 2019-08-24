@@ -1,8 +1,21 @@
-page{background-color: #fff}
+page{background-image: url(http://m.54xuebaxue.com/wx_img/img/dayuwen/appreciationbd.png);
+background-size: 100% 100%}
+.clearfix{clear: both}
 .reton{width: 18rpx;height: 32rpx;z-index: 999999;display: block;padding-top: 34rpx;margin: 0 auto}
 .reton_sun{width: 100rpx;height: 100rpx;position: absolute;left: 4rpx;top: 30rpx;}
 .header{position: fixed;left: 0;top: 0;line-height: 13vh;height: 10vh;text-align: center;display: block;width: 100%;background-color: #fff;}
 .title{width: 690rpx;margin: 0 auto;font-size: 30rpx;height: 30rpx;line-height: 30rpx}
+.title text{font-size: 24rpx;color: #6DA6DD}
 .content_box{width: 690rpx;margin: 0 auto;margin-top: 54rpx}
 .content_box .name text{font-size: 28rpx;}
 .content_box .content text{font-size: 28rpx;text-indent:20rpx}
+.header_sun{width: 690rpx;margin: 0 auto}
+.header_sun .photo{width: 170rpx;height: 164rpx;float: left;
+border-radius: 10rpx;overflow: hidden;}
+.header_sun .photo image{width: 100%;height: 100%}
+.header_sun .information_sun{float: left;}
+.header_sun .information_sun .name text{font-size: 32rpx;display: block;height: 32rpx;line-height: 32rpx}
+.header_sun .information_sun .author text{font-size: 24rpx;display: inline-block;height: 60rpx;
+color:#fff;margin-right:20rpx;line-height: 60rpx;background-color: #6DA6DD;padding-left: 26rpx;padding-right: 26rpx
+;border-radius: 8rpx}
+.header_sun .information_sun .author{margin-top: 48rpx}

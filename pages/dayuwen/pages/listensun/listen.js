@@ -1,6 +1,8 @@
 const innerAudioContext = wx.createInnerAudioContext()
 const app = getApp()
 var flg = false
+var time_weisun
+var timesunww
 Page({
 
   /**
@@ -22,7 +24,7 @@ Page({
     thumbnail: '',
     tabTitle: '',
     currentTextLength: 0,
-    tiem_wei:"",
+    tiem_wei:"00:00",
     tiem_wei02: "00:00"
   },
   suspend: function () {
@@ -58,16 +60,38 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+     time_weisun=setInterval(function(){
+      
+      if (innerAudioContext.duration!=0){
+        
+        timesunww = innerAudioContext.duration
+        clearInterval(time_weisun)
+        console.log(timesunww)//2.795102
+      }
+    },1000)
+
     console.log('options:', options);
+    var that=this
     this.empty = this.selectComponent("#empty");
     this.compontNavbar = this.selectComponent("#compontNavbar");
     var name = wx.getStorageSync("rname")
-    console.log(name)
-    this.setData({
-      tabTitle: name
-    });
+    var long 
+    var tx=setInterval(function(){
+      long = timesunww
+      if (long !== undefined){
+        
+        clearInterval(tx)
+        that.setData({
+          tabTitle: name,
+          tiem_wei: that.timeFormat(parseInt(long))
+          
+        });
+      }
+    },1000)
+   
+  
     //
-    let that = this;
+   
     let id = options.id;
     console.log(app.userInfo);
     this.setData({
@@ -132,7 +156,9 @@ Page({
     //绑定音频播放地址
   
     innerAudioContext.src = audioUrl;
+    
     console.log(innerAudioContext.duration)
+ 
     innerAudioContext.onPlay(() => {
       console.log('开始播放')
       that.setData({
@@ -146,7 +172,7 @@ Page({
     })
     innerAudioContext.onTimeUpdate(function () {
       let srcText = that.data.text;
-     
+      console.log(innerAudioContext.duration)
       setTimeout(function () {
         let srcCurrentText = [];
         if (srcText.length) {
@@ -164,13 +190,15 @@ Page({
         let lastTime = parseInt(innerAudioContext.duration) - parseInt(innerAudioContext.currentTime);
         lastTime = that.timeFormat(lastTime);
         let percentTime = that.timeFormat(parseInt(innerAudioContext.currentTime)) + '/' + that.timeFormat(parseInt(innerAudioContext.duration));
+        
         //
         console.log('currentId: ',currentId);
         console.log('that.data.toView: ',that.data.toView);
         //
         that.setData({
           percent: percent,
-          percentTime
+          tiem_wei02: that.timeFormat(parseInt(innerAudioContext.currentTime))
+          
         });
         if (that.data.toView == currentId) {
           
@@ -194,6 +222,10 @@ Page({
           })
         }
       }, 1000)
+      
+      that.setData({
+       
+      })
     });
   },
   //

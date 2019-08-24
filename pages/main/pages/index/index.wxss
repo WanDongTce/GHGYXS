@@ -1,11 +1,14 @@
 /* pages/ailangdu//pages/index/index.wxss */
+.clearfix{clear: both}
 .banner{
   margin-top: 30rpx;
   margin-bottom: 30rpx;
 }
 .swiper-active{
-  height: 600rpx;
-  transform: scale(1.2);
+   width: 710rpx;
+  height: 283rpx;
+  display: block;
+
   transition: all .3s;
 }
 .swiper-item{
@@ -16,17 +19,21 @@
   height: 350rpx;
 }
 .image-box{
-  padding:0 20rpx;
+  width: 710rpx;
+  height: 283rpx;
   overflow:hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
+  margin: 0 auto;
   border-radius: 8rpx;
+  box-shadow: 10px 17.321px 23px 0px rgb( 203, 203, 203 );
 }
 .slide-image{
   /* margin-left: 30rpx;
   margin-right: 30rpx; */
   border-radius: 8rpx;
+  width: 710rpx;
+  height: 283rpx;
+  display: block
 }
 
 .icon-nav{
@@ -34,7 +41,7 @@
   /* 微信不支持evenly */
   justify-content: space-between;
   align-items: center;
-  padding: 30rpx;
+  padding: 30rpx 20rpx;
   padding-top: 0;
 }
 .icon-nav-left{
@@ -46,6 +53,7 @@
   padding: 25rpx 40rpx;
   background-color: #F9F2E7;
   color: #C18949;
+  box-shadow: 0 15rpx 16rpx #ddd;
 }
 .icon-nav-right{
     border-radius: 8rpx;
@@ -56,6 +64,7 @@ display: flex;
   padding: 25rpx 40rpx;
   background-color: #E6F5FA;
   color: #4BACE2;
+  box-shadow: 0 15rpx 16rpx #ddd;
 }
 .icon-img{
   width: 100rpx;
@@ -63,17 +72,13 @@ display: flex;
 }
 .action{
   padding: 0 30rpx;
-}
-.action-text.action-active{
-  color: #333;
-  font-size: 30rpx;
-  font-weight: 600;
-  position: relative;
+  display: flex;
+  align-items: center;
 }
 .action-text{
-  margin-right: 25rpx;
-  font-size: 24rpx;
-  color: #999;
+  margin-left: 20rpx;
+  font-size: 30rpx;
+  color: #333;
 }
 .action-active::after{
   content: "";
@@ -85,35 +90,131 @@ display: flex;
   background-color: #4BACE2;
 }
 .item-span{
-  display: flex;
-  align-items: center;
+  flex: 3;
+  display: block;
+float: left
+}
+.item-span2{
+  flex: 2;
+  display: block;
+float: left
 }
 .item-rel-icon{
-  width: 28rpx;
-  height: 28rpx;
+  width: 48rpx;
+  height: 38rpx;
+  margin-left:45rpx 
 }
 .item-rel-icon-text{
   font-size: 26rpx;
   margin-left: 10rpx;
-  color: #999;
+  color: #6DA6DD;
 }
 .list{
   margin: 0 30rpx;
+  background-image: url(http://m.54xuebaxue.com/wx_img/img/dayuwen/listbd.png);
+  background-size: 100% 100%
 }
 .list-item{
-padding: 30rpx 0;
+  padding-top: 54rpx;
+height: 110rpx;
 border-bottom: 1rpx solid #E6E6E6;
+display: block;
+flex-direction: row;
+position: relative
+}
+.thumbnail{
+  width: 140rpx;
+  height: 140rpx;
+  background-color: #eee;
 }
 .item-rel{
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  display: block;
+position: absolute;right: 0;bottom: 0;
   margin-top: 20rpx;
-}
-.item-span{
   flex: 1;
+  
 }
 .item-title{
   font-size: 32rpx;
   color: #333;
+  margin-left: 165rpx;
+  margin-top: 55rpx
+}
+/* / */
+.nav-text{
+  display: block;
+  margin-left: 10rpx;
+}
+.text-title{
+  display: block;
+}
+.en-title{
+  display: block;
+  font-size: 14rpx;
+  color: #999;
+  text-transform: uppercase;
+}
+.hot{
+  font-size: 24rpx;
+  color: #F02D63;
+  border: 1rpx solid #F02D63;
+  padding: 2rpx 6rpx;
+  height: 34rpx;
+  border-radius: 8rpx;
+  margin-left: 10rpx;
+  font-weight: 200;
+  margin-top: 55rpx
+}
+.ad{
+ 
+}
+.ad-title{
+  color: #999;
+  font-weight: 100;
+  text-align: center;
+  font-size: 32rpx;
+  margin: 20rpx;
+  
+}
+.blod{
+  font-weight: 400;
+  color: #333;
+}
+.ad-content{
+  width: 710rpx;margin: 0 auto
+}
+.ad-content-item{
+  width: 344rpx;
+  overflow: hidden;
+  display: block;
+  margin-right: 21rpx;
+  float: left;
+  height: 174rpx;
+  background-size: 100% 100%;
+  margin-bottom: 22rpx
+}
+.ad-content-item:nth-child(1){background-image: url(http://m.54xuebaxue.com/wx_img/img/dayuwen/new1.png)}
+.ad-content-item:nth-child(2){background-image: url(http://m.54xuebaxue.com/wx_img/img/dayuwen/new2.png)}
+.ad-content-item:nth-child(3){background-image: url(http://m.54xuebaxue.com/wx_img/img/dayuwen/new3.png)}
+.ad-content-item:nth-child(4){background-image: url(http://m.54xuebaxue.com/wx_img/img/dayuwen/new4.png)}
+.ad-content-item .name{font-size: 36rpx;height: 36rpx;line-height: 36rpx;color: #fff;margin-left: 30rpx;
+margin-top: 40rpx;display: block}
+.ad-content-item .author{font-size: 24rpx;height: 24rpx;line-height: 24rpx;color: #fff;margin-left: 15rpx;
+margin-top: 40rpx;float: left}
+.ad-content-item .avatar{font-size: 24rpx;height: 24rpx;line-height: 24rpx;color: #fff;margin-left: 15rpx;
+margin-top: 40rpx;float: left}
+
+
+.ad-content-item:nth-child(4) .name{font-size: 36rpx;height: 36rpx;line-height: 36rpx;color: #999;margin-left: 30rpx;
+margin-top: 40rpx;display: block}
+.ad-content-item:nth-child(4) .author{font-size: 24rpx;height: 24rpx;line-height: 24rpx;color: #999;margin-left: 15rpx;
+margin-top: 40rpx;float: left}
+.ad-content-item:nth-child(4) .avatar{font-size: 24rpx;height: 24rpx;line-height: 24rpx;color: #999;margin-left: 15rpx;
+margin-top: 40rpx;float: left}
+
+
+.ad-content-item:nth-child(2n){margin-right: 0}
+.bg-img{
+  /* position: absolute; */
+  height: 218rpx
 }

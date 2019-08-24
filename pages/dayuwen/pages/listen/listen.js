@@ -7,6 +7,8 @@ var scidsun;
 var lun_sun
 var goodnum;
 var  rname;
+var time_weisun
+var timesunww
 Page({
 
   /**
@@ -31,7 +33,9 @@ Page({
 
     good:"",
     already:"",
-    currentTextLength: 0
+    currentTextLength: 0,
+    tiem_wei: "00:00",
+    tiem_wei02: "00:00"
   },
   goBack: function () {
     console.log(111)
@@ -69,6 +73,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that=this
+    time_weisun = setInterval(function () {
+
+      if (innerAudioContext.duration != 0) {
+
+        timesunww = innerAudioContext.duration
+        clearInterval(time_weisun)
+        console.log(timesunww)//2.795102
+      }
+    }, 1000)
     //分享调整
     let r = getCurrentPages();
     r = r[r.length - 1];
@@ -89,10 +103,22 @@ Page({
     this.compontNavbar = this.selectComponent("#compontNavbar");
     var name = wx.getStorageSync("rname")
     console.log(name)
-        this.setData({
+    var long
+    var tx = setInterval(function () {
+      long = timesunww
+      if (long !== undefined) {
+
+        clearInterval(tx)
+        that.setData({
+          tabTitle: name,
+          tiem_wei: that.timeFormat(parseInt(long)),
           tabTitle: name,
           pic_sun: pic_sun
+
         });
+      }
+    }, 1000)
+        
     //
     let id = options.id;
     console.log(options.good)
@@ -211,7 +237,8 @@ Page({
         console.log('that.data.toView: ', that.data.toView);
         that.setData({
           percent: percent,
-          percentTime
+          percentTime,
+          tiem_wei02: that.timeFormat(parseInt(innerAudioContext.currentTime))
         });
         //
         if (that.data.toView == currentId) {

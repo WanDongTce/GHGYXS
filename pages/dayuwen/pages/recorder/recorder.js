@@ -27,7 +27,8 @@ Page({
     name: '',
     author: '',
     isRecoder: 1,
-    images:""
+    images:"",
+    Dynasty:""
   },
   // 258秒 改成2:35格式
   timeFormat: function (time) {
@@ -241,13 +242,14 @@ Page({
           tabTitle: vname
         });
     let that = this;
-    let { id,name,author } = options;
-    
-    console.log(id);
+    let { id, name, author } = options;
+    var Dynasty=wx.getStorageSync("author")
+    console.log(Dynasty);
     that.setData({
       pageId: id,
       name,
       author,
+      Dynasty: Dynasty
      
 
     });

@@ -1,14 +1,15 @@
 <!--pages/recorder/recorder.wxml-->
 <compontNavbar title="{{tabTitle}}" isShowBack="{{true}}"></compontNavbar>
 <view class="info">
-	<image class="info-avatar" src="{{images}}" />
+	<image class="info-avatar" src="http://m.54xuebaxue.com/wx_img/img/dayuwen/photo.png" />
 	<view class="info-right">
 		<view class="info-right_title">{{name}}</view>
 		<view class="info-right_author">{{author}}</view>
+    <view class="info-right_author">{{Dynasty}}</view>
 	</view>
 </view>
 
-<view>
+<view class="Progress">
 	<progress percent="{{percent}}" />
 	<text class="time-info">{{currentTime}}/{{duration}}</text>
 </view>

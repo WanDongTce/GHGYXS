@@ -1,6 +1,23 @@
 <view class="header"><text>诗歌赏析</text>
  <view class='reton_sun' bindtap='topshoop'><image src='/pages/dayuwen/images/arrow.png' class='reton'></image></view>
 </view>
+  <view class="header_sun">
+     <view class='photo'>
+      <image src='http://m.54xuebaxue.com/wx_img/img/dayuwen/photo.png'></image>
+    </view>
+    <view class='information_sun'>
+      <view class='name'>
+        <text>{{name}}</text>
+      </view>
+      <view class='author'>
+        <text>{{author}}</text>
+        <text>{{author02}}</text>
+      </view>
+      
+    </view>
+    <view class="clearfix"></view>
+  </view>
+
 <view class="title">
   <text>译文及注释</text>
 </view>

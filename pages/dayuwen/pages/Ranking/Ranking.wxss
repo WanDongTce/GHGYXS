@@ -1,39 +1,41 @@
 .clearfix{clear: both}
 page{background-color: #fff}
-.box{width: 654rpx;margin: 0 auto;border: 1px solid #E6E6E6;height: 262rpx;border-radius: 10rpx;
+.box{width: 690rpx;margin: 0 auto;height: 262rpx;border-radius: 10rpx;
 margin-top: 30rpx}
 .reton{width: 18rpx;height: 32rpx;z-index: 999999;display: block;padding-top: 34rpx;margin: 0 auto}
 .reton_sun{width: 100rpx;height: 100rpx;position: absolute;left: 4rpx;top: 30rpx;}
 .header{position: fixed;left: 0;top: 0;line-height: 13vh;height: 10vh;text-align: center;display: block;width: 100%;background-color: #fff;}
-.information{background-color: #fff;padding-top: 30rpx;border-radius: 10rpx 10rpx 0 0 }
-.information .content_box{width: 690rpx;margin: 0 auto;}
-.information .content_box .photo{width: 100rpx;height: 100rpx;background-color: #ddd;float: left;
-border-radius: 10rpx;overflow: hidden;margin-left: -32rpx}
+.information{background-color: #fff;padding-top: 30rpx;float: left }
+.information .content_box .photo{width: 170rpx;height: 164rpx;float: left;
+border-radius: 10rpx;overflow: hidden;}
 .information .content_box .photo image{width: 100%;height: 100%}
-.information .content_box .information_sun{float: left;width: 526rpx;margin-left: 28rpx}
+.information .content_box .information_sun{float: left;}
 .information .content_box .information_sun .name text{font-size: 32rpx;display: block;height: 32rpx;line-height: 32rpx}
-.information .content_box .information_sun .author text{font-size: 24rpx;display: inline-block;height: 24rpx;line-height: 24rpx;
-color: #999999;margin-right: 20rpx}
-.information .content_box .information_sun .author{margin-top: 30rpx}
-.information .content_box .information_sun .appreciation text{font-size: 26rpx;display: block;height: 24rpx;line-height: 24rpx;
-color: #333333}
+.information .content_box .information_sun .author text{font-size: 24rpx;display: inline-block;height: 60rpx;
+color:#fff;margin-right:20rpx;line-height: 60rpx;background-color: #6DA6DD;padding-left: 26rpx;padding-right: 26rpx
+;border-radius: 8rpx}
+
+.information .content_box .information_sun .author{margin-top: 48rpx}
+.information .content_box .information_sun .appreciation text{font-size: 26rpx;display: block;height: 24rpx;line-height: 24rpx;color: #333333;}
 .information .content_box .information_sun .appreciation{margin-top: 30rpx}
 .information .content_box .information_sun{position: relative}
 .information .content_box .information_sun .hear{position: absolute;right: 0;top: 43rpx;width: 130rpx;height: 50rpx}
 .information .content_box .information_sun .hear text{display: block;line-height: 50rpx;text-align: center;
 border: 2rpx solid #48B947;color: #48B947;border-radius: 50rpx;font-size: 26rpx}
-.function{margin: 0 auto;width: 590rpx;border-top: 1px solid #E6E6E6;padding-top: 24rpx;padding-bottom: 24rpx;
-margin-top: 30rpx;}
+.function{margin: 0 auto;padding-top: 24rpx;padding-bottom: 24rpx;float: right}
 .function .appreciation{float: left}
-.function .appreciation text{font-size: 26rpx;color: #333}
-.function .hear{float: right;background-color: #F4F4F4;border-radius: 24rpx}
-.function .hear text{font-size: 26rpx;color: #333;display: block;line-height: 48rpx;padding-left: 20rpx;padding-right: 20rpx;}
+.function .appreciation text{font-size: 24rpx;color: #333;display: block;height: 32rpx;line-height: 32rpx;
+background-image: url(http://m.54xuebaxue.com/wx_img/img/dayuwen/appreciation.png);background-size: 28rpx 32rpx;
+background-repeat: no-repeat;background-position: left center;padding-left: 36rpx}
+.function .hear{float: right;}
+.function .hear text{font-size: 24rpx;color: #333;display: block;height: 32rpx;line-height: 32rpx;
+background-image: url(http://m.54xuebaxue.com/wx_img/img/dayuwen/hear.png);background-position: left center;padding-left: 36rpx;background-size: 26rpx 26rpx;background-repeat: no-repeat;margin-left: 20rpx}
 .clearfix{clear: both}
 
 
 
 
-.btn{margin-top: 30rpx;border-bottom: 2rpx solid #E8E8E8}
+.btn{margin-top: 30rpx;border-bottom: 2rpx solid #E8E8E8;margin-bottom: 28rpx}
 .btn .list{width: 50%;float: left;background-color: #fff;text-align: center;}
 .btn .list text{display: inline-block;font-size: 28rpx;height: 28rpx;padding-top: 30rpx;padding-bottom: 28rpx;}
 .btn .active text{border-bottom: 2rpx solid #4BACE2;color: #4BACE2}
@@ -43,12 +45,43 @@ margin-top: 30rpx;}
 .list_box .list .on{float: left;width: 65rpx}
 .list_box .list .on text{font-size: 30rpx;line-height: 120rpx}
 .list_box .list .on image{width: 48rpx;height: 40rpx;display: none;padding-top: 35rpx}
-.list_box .list:nth-child(1) text{ display: none}
-.list_box .list:nth-child(1) image{display: block}
-.list_box .list:nth-child(2) text{ display: none}
-.list_box .list:nth-child(2) image{display: block}
-.list_box .list:nth-child(3) text{ display: none}
-.list_box .list:nth-child(3) image{display: block}
+.box_one{width: 690rpx;margin: 0 auto;position: relative}
+.one{width: 124rpx;margin: 0 auto;text-align: center}
+.one_sun{width: 124rpx;height: 130rpx;margin: 0 auto;background-image: url(http://m.54xuebaxue.com/wx_img/img/dayuwen/one.png);background-size: 100% ;padding-top: 36rpx;
+overflow: scroll;position: relative;background-repeat: no-repeat}
+.one_sun .photo{width: 120rpx;margin: 0 auto;height: 120rpx;background-color: #e5e5e5;border-radius: 50%;
+position: relative;overflow:scroll}
+.one_sun .photo image{width: 100%; height: 100%}
+.one_sun  .number{position: absolute;left: 44rpx;top: 128rpx;display: block;width: 36rpx;text-align: center;
+line-height: 36rpx;font-size: 24rpx;color: #fff;background-color: #fdc803;border-radius: 50%;
+z-index: 999;}
+
+.two{width: 114rpx;text-align: center;position: absolute;left: 134rpx;top: 10rpx}
+.two_sun{width: 114rpx;height: 120rpx;margin: 0 auto;background-image: url(http://m.54xuebaxue.com/wx_img/img/dayuwen/two.png);background-size: 100% ;padding-top: 34rpx;
+overflow: scroll;position: relative;background-repeat: no-repeat}
+.two_sun .photo{width: 110rpx;margin: 0 auto;height: 110rpx;background-color: #e5e5e5;border-radius: 50%;
+position: relative;overflow:scroll}
+.two_sun .photo image{width: 100%; height: 100%}
+.two_sun  .number{position: absolute;left: 44rpx;top: 118rpx;display: block;width: 36rpx;text-align: center;
+line-height: 36rpx;font-size: 24rpx;color: #fff;background-color: #fdc803;border-radius: 50%;
+z-index: 999;}
+
+
+.three{width: 114rpx;text-align: center;position: absolute;right: 134rpx;top: 10rpx}
+.three_sun{width: 114rpx;height: 120rpx;margin: 0 auto;background-image: url(http://m.54xuebaxue.com/wx_img/img/dayuwen/three.png);background-size: 100% ;padding-top: 34rpx;
+overflow: scroll;position: relative;background-repeat: no-repeat}
+.three_sun .photo{width: 110rpx;margin: 0 auto;height: 110rpx;background-color: #e5e5e5;border-radius: 50%;
+position: relative;overflow:scroll}
+.three_sun .photo image{width: 100%; height: 100%}
+.three_sun  .number{position: absolute;left: 44rpx;top: 118rpx;display: block;width: 36rpx;text-align: center;
+line-height: 36rpx;font-size: 24rpx;color: #fff;background-color: #fdc803;border-radius: 50%;
+z-index: 999;}
+
+
+
+.Fabulous_sun{font-size: 24rpx;color: #7FB1E1;display: inline-block;text-align: center;
+padding-left: 40rpx;background-size: 36rpx 30rpx;background-image:url(http://m.54xuebaxue.com/wx_img/img/dayuwen/Fabulous.png);background-repeat: no-repeat }
+
 .list_box .list .photo{width: 60rpx;height: 60rpx;border-radius: 50%;float: left;margin-top: 30rpx;overflow: hidden;background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQ1IDc5LjE2MzQ5OSwgMjAxOC8wOC8xMy0xNjo0MDoyMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6ODlBQTg0QUNBMzdEMTFFOThDNjhGNEY4RDdFOUE2NkEiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6ODlBQTg0QUJBMzdEMTFFOThDNjhGNEY4RDdFOUE2NkEiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKFdpbmRvd3MpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6OTJGRDRCODM5Rjg5MTFFODgyQkRCQzdFRTREMDFEMjciIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6OTJGRDRCODQ5Rjg5MTFFODgyQkRCQzdFRTREMDFEMjciLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4QkyBEAAAK/UlEQVR42qyb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);background-size: 100% 100%}
 .list_box .list .photo image{width: 100%;height: 100%}
 .list_box .list .name{float: left;margin-left: 13rpx}
@@ -61,7 +94,6 @@ margin-top: 30rpx;}
 .hidden{display: none}
 .list_box .list .time{float: left}
 .list_box .list .time text{font-size: 32rpx;display: block;height: 32rpx;line-height: 120rpx}
-.Recitation{background-color: #fff;position: fixed;left: 0;bottom: 0;width: 100%;padding-bottom: 56rpx;padding-top: 40rpx}
-.Recitation .btn_sun{width: 260rpx;height: 70rpx;line-height: 70rpx;margin: 0 auto;background-color: #4BACE2;
- border-radius: 35rpx}
-.Recitation .btn_sun text{display: block;line-height: 70rpx;text-align: center;color: #fff;font-size: 32rpx;}
+.Recitation{background-color: #fff;position: fixed;left: 0;bottom: 0;width: 100%;padding-top: 40rpx}
+.Recitation .btn_sun{width: 100%;height: 90rpx;line-height: 90rpx;margin: 0 auto;background-color: #4BACE2;}
+.Recitation .btn_sun text{display: block;line-height: 90rpx;text-align: center;color: #fff;font-size: 32rpx;}

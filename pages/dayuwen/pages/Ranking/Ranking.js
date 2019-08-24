@@ -21,7 +21,14 @@ Page({
     list_sun: [],
     pid: "",
     pic: "",
-    audid: ""
+    audid: "",
+    one_img:"",
+    two_img: "",
+    three_img: "",
+    Fabulous_sun:"",
+    Fabulous_sun02: "",
+    Fabulous_sun03: "",
+
   },
   goting: function (e) {
     var postad = e.currentTarget.dataset.postad;
@@ -34,6 +41,8 @@ Page({
     var postad = e.currentTarget.dataset.postad;
     var name = e.currentTarget.dataset.name;
     var author = e.currentTarget.dataset.author;
+    var Dynasty = e.currentTarget.dataset.Dynasty;
+    console.log(e.currentTarget.dataset.Dynasty)
     wx.navigateTo({
       url: `/pages/dayuwen/pages/recorder/recorder?id=${postad}&name=${name}&author=${author}`
     })
@@ -94,7 +103,8 @@ Page({
         wx.setStorageSync("pic", res.data.data[0].item.imgUrl)
         wx.setStorageSync("rname", res.data.data[0].item.rname)
         var text = res.data.data[0].item.cname + "" + res.data.data[0].item.readname
-      
+        console.log(res.data.data[0].item.readname)
+        wx.setStorageSync("author", res.data.data[0].item.readname)
         that.setData({
           name: res.data.data[0].item.rname,
           author: res.data.data[0].item.cname,
@@ -168,7 +178,14 @@ Page({
           console.log(typeof list_wei);
           list_wei.push(res.data.data[0].list[i])
         }
+        console.log(res.data.data[0].list[0])
         that.setData({
+          one_img: res.data.data[0].list[0].avatar,
+          two_img: res.data.data[0].list[1].avatar,
+          three_img: res.data.data[0].list[2].avatar,
+          Fabulous_sun: res.data.data[0].list[0].praisenum,
+          Fabulous_sun02: res.data.data[0].list[1].praisenum,
+          Fabulous_sun03: res.data.data[0].list[2].praisenum,
           list: res.data.data[0].list
         })
       }
