@@ -23,6 +23,9 @@ Page({
     pic: "",
     audid: "",
     one_img:"",
+    one_id:"",
+    two_id: "",
+    three_id: "",
     two_img: "",
     three_img: "",
     Fabulous_sun:"",
@@ -181,6 +184,9 @@ Page({
         console.log(res.data.data[0].list[0])
         that.setData({
           one_img: res.data.data[0].list[0].avatar,
+          one_id: res.data.data[0].list[0].id,
+          two_id: res.data.data[0].list[1].id,
+          three_id: res.data.data[0].list[2].id,
           two_img: res.data.data[0].list[1].avatar,
           three_img: res.data.data[0].list[2].avatar,
           Fabulous_sun: res.data.data[0].list[0].praisenum,

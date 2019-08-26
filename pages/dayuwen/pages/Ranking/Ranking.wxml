@@ -42,7 +42,7 @@
   <view class='clearfix'></view>
 </view>
 <view class='box_one {{selected?"show":"hidden"}}'>
-    <view class='one '>
+    <view class='one 'data-postad="{{one_id}}" catchtap='tolangdu02'>
       <view class="one_sun">
         <text class="number">1</text>
         <view class="photo">
@@ -51,7 +51,7 @@
       </view>
       <text class="Fabulous_sun">{{Fabulous_sun}}</text>
     </view>
-    <view class='two '>
+    <view class='two ' data-postad="{{two_id}}" catchtap='tolangdu02'>
       <view class="two_sun">
         <text class="number">2</text>
         <view class="photo">
@@ -61,7 +61,7 @@
       <text class="Fabulous_sun">{{Fabulous_sun02}}</text>
     </view>
 
-    <view class='three '>
+    <view class='three ' data-postad="{{three_id}}" catchtap='tolangdu02'>
       <view class="three_sun">
         <text class="number">3</text>
         <view class="photo">
