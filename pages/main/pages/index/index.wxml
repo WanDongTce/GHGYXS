@@ -6,7 +6,9 @@
   <swiper class="swiper-wrap" display-multiple-items='1' circular interval="{{2000}}" duration="{{1000}}"  bindchange="change">
     <block wx:for="{{imgUrls}}" wx:key="{{item.id}}">
       <swiper-item class="swiper-item" data-id="{{currentSwiper}}" data-index="{{index}}">
-        <view class="image-box"><image  class="slide-image {{index==currentSwiper?'swiper-active':'disabled'}}" src="{{item.image}}" height="500" /></view>
+        <view class="image-box">
+          <navigator url="{{item.url}}"><image  class="slide-image {{index==currentSwiper?'swiper-active':'disabled'}}" src="{{item.image}}" height="500" /></navigator>
+        </view>
       </swiper-item>
     </block>
   </swiper>
@@ -23,7 +25,7 @@
   <navigator url="/pages/ailangdu/pages/Match/Match" class="icon-nav-right">
     <image class="icon-img" src="http://m.54xuebaxue.com/wx_img/img/dayuwen/Match.png"></image>
     <view  class="nav-text">
-      <text class="text-title">诗歌比赛</text>
+      <text class="text-title">诵读比赛</text>
       <text class="en-title">Poetry recitation</text>
     </view>
   </navigator>

@@ -4,6 +4,7 @@
   margin-top: 30rpx;
   margin-bottom: 30rpx;
 }
+.navigator{display: block;margin: 0 auto}
 .swiper-active{
    width: 710rpx;
   height: 283rpx;
