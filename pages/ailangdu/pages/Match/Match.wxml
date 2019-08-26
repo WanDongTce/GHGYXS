@@ -29,8 +29,8 @@
       <view class="text_box {{currentTab==3?'hide':''}}" >
         <view class="name">
 
-          <text wx:if="{{item.is_participate==1}}">{{item.title}}<text>进行中...</text></text>
-          <text wx:if="{{item.is_participate==2}}">{{item.title}}<text>评审中...</text></text>
+          <text wx:if="{{item.type==1}}">{{item.title}}<text>进行中...</text></text>
+          <text wx:if="{{item.type==2}}">{{item.title}}<text>评审中...</text></text>
         </view>
          <view class="time">
           <text>截止日期：{{item.end_time}}</text>

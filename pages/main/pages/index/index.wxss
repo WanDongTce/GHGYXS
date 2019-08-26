@@ -67,8 +67,8 @@ display: flex;
   box-shadow: 0 15rpx 16rpx #ddd;
 }
 .icon-img{
-  width: 100rpx;
-  height: 120rpx;
+  width: 97rpx;
+  height: 80rpx;
 }
 .action{
   padding: 0 30rpx;

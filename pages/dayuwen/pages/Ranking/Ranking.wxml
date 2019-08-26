@@ -15,7 +15,6 @@
         <text>{{author}}</text>
         <text>{{author02}}</text>
       </view>
-      
     </view>
     <view class='clearfix'></view>
   </view>

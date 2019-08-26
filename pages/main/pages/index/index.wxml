@@ -14,14 +14,14 @@
 <!-- 入口 -->
 <view class="icon-nav">
   <navigator url="/pages/dayuwen/pages/songdetail/songdetail" class="icon-nav-left">
-    <image class="icon-img" src="../../images/index/icon-nav1@2x.png"></image>
+    <image class="icon-img" src="http://m.54xuebaxue.com/wx_img/img/dayuwen/Recitation.png"></image>
     <view  class="nav-text">
       <text>诗歌朗读</text>
       <text class="en-title">Poetry recitation</text>
     </view>
   </navigator>
   <navigator url="/pages/ailangdu/pages/Match/Match" class="icon-nav-right">
-    <image class="icon-img" src="../../images/index/icon-nav2@2x.png"></image>
+    <image class="icon-img" src="http://m.54xuebaxue.com/wx_img/img/dayuwen/Match.png"></image>
     <view  class="nav-text">
       <text class="text-title">诗歌比赛</text>
       <text class="en-title">Poetry recitation</text>
