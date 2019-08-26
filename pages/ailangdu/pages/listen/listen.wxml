@@ -5,13 +5,7 @@
   <view class='bd'>
     <image class="btn" src="{{thumbnail}}"></image>
   </view>
-  <view class='btn_sun' wx:if="{{flg==true}}" bindtap='suspend'>
-  <image src='/pages/ailangdu/images/suspend02.png' class='suspend'></image>
  
-  </view>
-  <view class='btn_sun' wx:else bindtap='suspend'>
-     <image src='/pages/ailangdu/images/start02.png'  class='start02'></image>
-  </view>
 </view>
 
 <view class="text-wrap">
@@ -48,7 +42,22 @@
 	 custom-class="progress"
 	/>
 </view>
-
+<view class="time">
+  <view class="long">{{tiem_wei}}</view>
+  <view class="indexsun">{{tiem_wei02}}</view>
+  <view class="clearfix"></view>
+</view>
+<view class="btn_wei">
+<button class="share" open-type="share"></button>
+  <view class='btn_sun' wx:if="{{flg==true}}" bindtap='suspend'>
+  <image src='http://m.54xuebaxue.com/wx_img/img/dayuwen/suspend02.png' class='suspend'></image>
+ 
+  </view>
+  <view class='btn_sun' wx:else bindtap='suspend'>
+     <image src='http://m.54xuebaxue.com/wx_img/img/dayuwen/start02.png'  class='start02'></image>
+  </view>
+  <image catchtap='good' class="Give" src='{{already==2?"http://m.54xuebaxue.com/wx_img/img/dayuwen/Give.png":"http://m.54xuebaxue.com/wx_img/img/dayuwen/Give02.png"}}'></image>
+</view>
 
 <view class='footer'>
   <view class='list'>
