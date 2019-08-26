@@ -18,7 +18,7 @@
   <navigator url="/pages/dayuwen/pages/songdetail/songdetail" class="icon-nav-left">
     <image class="icon-img" src="http://m.54xuebaxue.com/wx_img/img/dayuwen/Recitation.png"></image>
     <view  class="nav-text">
-      <text>诗歌朗读</text>
+      <text>诗歌朗诵</text>
       <text class="en-title">Poetry recitation</text>
     </view>
   </navigator>
