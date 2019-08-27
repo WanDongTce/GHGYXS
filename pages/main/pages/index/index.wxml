@@ -66,6 +66,5 @@
         <view class="clearfix"></view>
       </view>
     </view>
-    
   </view>
 </scroll-view>

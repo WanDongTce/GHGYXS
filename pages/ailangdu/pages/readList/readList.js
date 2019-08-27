@@ -35,11 +35,12 @@ Page({
     var id = e.currentTarget.dataset.id;
     var name = e.currentTarget.dataset.rname;
     var author = e.currentTarget.dataset.author;
+    var dynasty = e.currentTarget.dataset.dynasty;
     var activity_id = this.data.activity_id;
-
+    console.log(dynasty)
     //跳转
     wx.navigateTo({
-      url: `/pages/ailangdu/pages/recorder/recorder?id=${id}&name=${name}&author=${author}&activity_id=${activity_id}`
+      url: `/pages/ailangdu/pages/recorder/recorder?id=${id}&name=${name}&author=${author}&activity_id=${activity_id}&dynasty=${dynasty}`
     })
   },
   /**

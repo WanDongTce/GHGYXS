@@ -11,7 +11,7 @@
 
 <view class="Progress">
 	<progress percent="{{percent}}" />
-	<text class="time-info">{{currentTime}}/{{duration}}</text>
+	<text class="time-info">{{currentTime}}</text>
 </view>
 
 <view class="text-wrap">

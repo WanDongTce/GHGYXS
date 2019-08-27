@@ -1,9 +1,12 @@
 const innerAudioContext = wx.createInnerAudioContext()
+innerAudioContext.volume = 0
 const rm = wx.getRecorderManager()
 let recoderCurrentTimes = 0;
 let timer = null, asnycTextTimer = null, timerOut = null;
 const app = getApp();
-var luyin=false
+var luyin = false
+var stopAudio = false, once = true;
+var flg = true
 Page({
   /**
    * 页面的初始数据
@@ -14,7 +17,7 @@ Page({
     text: [],
     duration: 0,
     durationM: 0,
-    currentTime: 0,
+    currentTime: "00:00",
     currentText: '',
     currentIndex: 0,
     toView: '',
@@ -27,8 +30,9 @@ Page({
     name: '',
     author: '',
     isRecoder: 1,
-    images:"",
-    Dynasty:""
+    images: "",
+    Dynasty: "",
+    activity_id: 0 //活动id
   },
   // 258秒 改成2:35格式
   timeFormat: function (time) {
@@ -38,13 +42,20 @@ Page({
   },
   //原声
   music: function () {
-    innerAudioContext.play();
-    this.pauseRecorder();
+    if (flg == true) {
+      innerAudioContext.volume = 1
+      flg = false
+    } else {
+      innerAudioContext.volume = 0
+      flg = true
+    }
+    // this.pauseRecorder();
   },
   //结束录音 上传文件
   uploadFile: function () {
+    innerAudioContext.stop();
     //
-    luyin=false
+    luyin = false
     rm.stop();
     let that = this;
     console.log(111)
@@ -55,48 +66,14 @@ Page({
       that.setData({
         recoderCurrentTime: 0
       });
-     
-    wx.removeStorageSync('filePath');
-    wx.setStorageSync('filePath', res.tempFilePath);
-    console.log(11111)
-    wx.navigateTo({
-      url: `/pages/dayuwen/pages/confirmend/confirmend?id=${that.data.pageId}&text=${that.data.text}`
-    });
-   
-      //上传文件
-      // wx.uploadFile({
-      //   url: 'https://social.ajihua888.com/v14/public/upload', //仅为示例，非真实的接口地址
-      //   filePath: res.tempFilePath, // 小程序临时文件路径,
-      //   name: '$_FILES',
-      //   success (res){
-      //     let data = res.data;
-      //     //do something
-      //     data = JSON.parse(data);
-      //     let filelUrl = data.data[0].list[0].file_url;
-      //     console.log(filelUrl);
-      //     console.log(data);
-      //     //记录录音
-      //     wx.request({
-      //       url: 'https://social.ajihua888.com/v14/chinese/audio-add', //仅为示例，并非真实的接口地址
-      //       header: {
-      //         'content-type': 'application/x-www-form-urlencoded' // 默认值
-      //       },
-      //       method: 'POST',
-      //       data: {
-      //         "token": "e6b5bf2e8d749f32370e76091bc80ae9",
-      //         "mobile": 18640341140,
-      //         "app_source_type": 1,
-      //         audio_id: 2,
-      //         audioUrl: filelUrl
-      //       },
-      //       success(res) {
-      //         console.log(res.data);
-      //       }
-      //     });
-      //     //
 
-      //   }
-      // });
+      wx.removeStorageSync('filePath');
+      wx.setStorageSync('filePath', res.tempFilePath);
+      console.log(11111)
+      wx.navigateTo({
+        url: `/pages/ailangdu/pages/confirmend/confirmend?id=${that.data.pageId}&text=${that.data.text}&activity_id=${that.data.activity_id}`
+      });
+
     });
   },
   //录音持续时间
@@ -114,15 +91,18 @@ Page({
   //start
   startRecorder: function () {
     let that = this;
-    luyin=true
-    innerAudioContext.stop();
+
+    luyin = true
+    // 开始录音 背景音乐播放 不显示时间
+    // innerAudioContext.stop();
+    stopAudio = true;
     //录音同步歌词时间
     that.recoderLastTime();
     //同步文字
     that.asnycText();
     //
     rm.start({
-      duration: 1000*60*10, //最长十分钟
+      duration: 1000 * 60 * 10, //最长十分钟
       format: 'mp3'
     });
     rm.onStart((res) => {
@@ -130,18 +110,20 @@ Page({
     });
     // this.uploadFile();
   },
-  changeClick: function(e){
+  changeClick: function (e) {
     let id = e.currentTarget.dataset.id;
-    if(id==1){
+    if (id == 1) {
       //录音
       this.startRecorder();
+      innerAudioContext.play();
       this.setData({
         isRecoder: 2,
         changeText: '暂停'
       });
-    } else if(id==2){
+    } else if (id == 2) {
       //暂停
       this.pauseRecorder();
+      innerAudioContext.pause();
       this.setData({
         isRecoder: 1,
         changeText: '录音'
@@ -151,6 +133,7 @@ Page({
   //暂停
   pauseRecorder: function () {
     rm.pause();
+    innerAudioContext.pause();
     clearInterval(timer);
     clearInterval(asnycTextTimer);
   },
@@ -167,7 +150,7 @@ Page({
     let that = this;
     luyin = true
     rm.pause();
-    
+
     clearInterval(timer);
     clearInterval(asnycTextTimer);
     wx.showModal({
@@ -176,7 +159,7 @@ Page({
       success(res) {
         if (res.confirm) {
           rm.start({
-            duration: 1000*60*10,
+            duration: 1000 * 60 * 10,
             format: 'mp3'
           });
           that.setData({
@@ -186,6 +169,9 @@ Page({
           that.recoderLastTime();
           //同步文字
           that.asnycText();
+          innerAudioContext.stop();
+          innerAudioContext.play();
+
         } else if (res.cancel) {
           //继续录制
           that.resumeRecorder();
@@ -203,21 +189,21 @@ Page({
     wx.showModal({
       title: '提示',
       content: '确认完成录制？',
-      
+
       success(res) {
         if (res.confirm) {
           // rm.stop();
-          if(luyin==false){
+          if (luyin == false) {
             wx.showModal({
               title: '提示',
               content: '请录制音频',
               showCancel: false,
             })
-          }else{
+          } else {
             that.uploadFile();
           }
-        
-         
+
+
         } else if (res.cancel) {
           rm.resume();
           //录音同步歌词时间
@@ -235,28 +221,25 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options);
     this.empty = this.selectComponent("#empty");
     this.compontNavbar = this.selectComponent("#compontNavbar");
-    var vname = wx.getStorageSync("rname")
-        this.setData({
-          tabTitle: vname
-        });
     let that = this;
-    let { id, name, author } = options;
-    var Dynasty=wx.getStorageSync("author")
-    console.log(Dynasty);
+    let { id, name, author, activity_id, dynasty } = options;
+    // var Dynasty = wx.getStorageSync("author")
+    // console.log(Dynasty);
     that.setData({
       pageId: id,
       name,
       author,
-      Dynasty: Dynasty
-     
-
+      tabTitle: name,
+      activity_id,
+      dynasty
     });
     that.playMusic(options);
 
   },
-  playMusic: function (options){
+  playMusic: function (options) {
     let that = this;
     //测试接口数据
     console.log(options)
@@ -277,12 +260,12 @@ Page({
         let data = res.data.data[0].item;
         let audioUrl = data.audioUrl;
         let lrcUrl = data.lrcUrl;
-        let img=data.imgUrl
+        let img = data.imgUrl
         //
         let isLrc = /.lrc/.test(lrcUrl);
-        console.log('isLrc: ',isLrc);
+        console.log('isLrc: ', isLrc);
         //下载歌词
-        if(isLrc){
+        if (isLrc) {
           wx.request({
             url: lrcUrl, //仅为示例，并非真实的接口地址
             header: {
@@ -293,8 +276,8 @@ Page({
               console.log(text)
               that.setData({
                 text: text,
-                duration: that.timeFormat(parseInt(text[text.length-1][0])),
-                images:img
+                duration: that.timeFormat(parseInt(text[text.length - 1][0])),
+                images: img
               });
               //
               that.startMusic(audioUrl);
@@ -307,7 +290,7 @@ Page({
       }
     });
   },
-  startMusic: function(audioUrl){
+  startMusic: function (audioUrl) {
     let that = this;
     //绑定音频播放地址
     innerAudioContext.autoplay = false
@@ -339,11 +322,20 @@ Page({
         percent = parseInt(100 * percent);
         let lastTime = parseInt(innerAudioContext.duration) - parseInt(innerAudioContext.currentTime);
         lastTime = that.timeFormat(lastTime);
-        //
-        that.setData({
-          percent: percent,
-          currentTime: that.timeFormat(parseInt(innerAudioContext.currentTime))
-        });
+        // 改成背景音乐 开始录音停掉进度
+        if (!stopAudio) {
+          that.setData({
+            percent: percent,
+            currentTime: that.timeFormat(parseInt(innerAudioContext.currentTime))
+          });
+        } else if (once) {
+          that.setData({
+            percent: 0,
+            currentTime: 0
+          });
+          once = false;
+        }
+
         console.log(percent)
         if (that.data.toView == currentId) {
           that.setData({
@@ -390,13 +382,13 @@ Page({
       //录音进度条调整
       // let percent = parseInt(innerAudioContext.currentTime) / parseInt(innerAudioContext.duration);
       //   percent = parseInt(100 * percent);
-        // let lastTime = parseInt(innerAudioContext.duration) - parseInt(innerAudioContext.currentTime);
-        // lastTime = that.timeFormat(lastTime);
-        //
-        that.setData({
-          percent: percent,
-          currentTime: that.timeFormat(that.data.recoderCurrentTime)
-        });
+      // let lastTime = parseInt(innerAudioContext.duration) - parseInt(innerAudioContext.currentTime);
+      // lastTime = that.timeFormat(lastTime);
+      //
+      that.setData({
+        percent: percent,
+        currentTime: that.timeFormat(that.data.recoderCurrentTime)
+      });
       //
       console.log('percent: ', percent)
       if (that.data.toView == currentId) {
@@ -441,10 +433,10 @@ Page({
     lines[lines.length - 1].length === 0 && lines.pop();
 
     //处理没有时间的无用字段
-    lines = lines.filter(function(item){
-      if(item.indexOf('[')!=-1){
+    lines = lines.filter(function (item) {
+      if (item.indexOf('[') != -1) {
         return item;
-      }   
+      }
     });
     //
 
@@ -485,6 +477,8 @@ Page({
     clearInterval(timer);
     clearInterval(asnycTextTimer);
     clearTimeout(timerOut);
+    innerAudioContext.volume = 0
+    innerAudioContext.stop();
 
   },
 
@@ -495,6 +489,9 @@ Page({
     clearInterval(timer);
     clearInterval(asnycTextTimer);
     clearTimeout(timerOut);
+    innerAudioContext.volume = 0
+    innerAudioContext.stop();
+
   },
 
   /**

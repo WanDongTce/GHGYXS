@@ -1,16 +1,17 @@
 <!--pages/recorder/recorder.wxml-->
 <compontNavbar title="{{tabTitle}}" isShowBack="{{true}}"></compontNavbar>
 <view class="info">
-	<image class="info-avatar" src="{{images}}" />
+	<image class="info-avatar" src="http://m.54xuebaxue.com/wx_img/img/dayuwen/photo.png" />
 	<view class="info-right">
 		<view class="info-right_title">{{name}}</view>
 		<view class="info-right_author">{{author}}</view>
+    <view class="info-right_author">{{dynasty}}</view>
 	</view>
 </view>
 
 <view>
 	<progress percent="{{percent}}" />
-	<text class="time-info">{{currentTime}}/{{duration}}</text>
+	<text class="time-info">{{currentTime}}</text>
 </view>
 
 <view class="text-wrap">
@@ -47,7 +48,7 @@
    <view class='list'data-id="{{isRecoder}}" bindtap="changeClick" wx:else> <image src='/pages/ailangdu/images/suspend.png'></image><text>{{changeText}}</text></view>
  <view class='list'  bindtap="music">
     <image src='/pages/ailangdu/images/Original.png'></image>
-    <text>背景音乐</text>
+    <text>原声</text>
   </view>
   <view class='list'bindtap="recorder"><image src='/pages/ailangdu/images/again.png'></image><text>重录</text></view>
   <view class='list' bindtap="stopRecorder"><image src='/pages/ailangdu/images/End.png'></image><text>结束</text></view>

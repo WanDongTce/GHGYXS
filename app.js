@@ -43,7 +43,7 @@ App({
     appverson:'V-1.1.5',
     app_source_type: 5,
     
-    swiperImgType: 'xbx',
+  swiperImgType: 'kaiqiao',
     contactTel: '024-66909606',
     sdkappid: 1400027766,
     accountType: 11731,

@@ -1,10 +1,12 @@
 const innerAudioContext = wx.createInnerAudioContext()
+innerAudioContext.volume = 0
 const rm = wx.getRecorderManager()
 let recoderCurrentTimes = 0;
 let timer = null, asnycTextTimer = null, timerOut = null;
 const app = getApp();
 var luyin=false
 var stopAudio = false, once = true;
+var flg=true
 Page({
   /**
    * 页面的初始数据
@@ -15,7 +17,7 @@ Page({
     text: [],
     duration: 0,
     durationM: 0,
-    currentTime: 0,
+    currentTime: "00:00",
     currentText: '',
     currentIndex: 0,
     toView: '',
@@ -29,6 +31,7 @@ Page({
     author: '',
     isRecoder: 1,
     images:"",
+    Dynasty: "",
     activity_id: 0 //活动id
   },
   // 258秒 改成2:35格式
@@ -39,8 +42,14 @@ Page({
   },
   //原声
   music: function () {
-    innerAudioContext.play();
-    this.pauseRecorder();
+  if(flg==true){
+    innerAudioContext.volume = 1
+    flg=false
+  }else{
+    innerAudioContext.volume = 0
+    flg = true
+  }
+    // this.pauseRecorder();
   },
   //结束录音 上传文件
   uploadFile: function () {
@@ -82,6 +91,7 @@ Page({
   //start
   startRecorder: function () {
     let that = this;
+    
     luyin=true
     // 开始录音 背景音乐播放 不显示时间
     // innerAudioContext.stop();
@@ -105,6 +115,7 @@ Page({
     if(id==1){
       //录音
       this.startRecorder();
+      innerAudioContext.play();
       this.setData({
         isRecoder: 2,
         changeText: '暂停'
@@ -112,6 +123,7 @@ Page({
     } else if(id==2){
       //暂停
       this.pauseRecorder();
+      innerAudioContext.pause();
       this.setData({
         isRecoder: 1,
         changeText: '录音'
@@ -121,6 +133,7 @@ Page({
   //暂停
   pauseRecorder: function () {
     rm.pause();
+    innerAudioContext.pause();
     clearInterval(timer);
     clearInterval(asnycTextTimer);
   },
@@ -156,6 +169,9 @@ Page({
           that.recoderLastTime();
           //同步文字
           that.asnycText();
+          innerAudioContext.stop();
+          innerAudioContext.play();
+
         } else if (res.cancel) {
           //继续录制
           that.resumeRecorder();
@@ -209,14 +225,16 @@ Page({
     this.empty = this.selectComponent("#empty");
     this.compontNavbar = this.selectComponent("#compontNavbar");
     let that = this;
-    let { id, name, author, activity_id } = options;
-
+    let { id, name, author, activity_id, dynasty } = options;
+    // var Dynasty = wx.getStorageSync("author")
+    // console.log(Dynasty);
     that.setData({
       pageId: id,
       name,
       author,
       tabTitle: name,
-      activity_id
+      activity_id,
+      dynasty
     });
     that.playMusic(options);
 
@@ -459,6 +477,8 @@ Page({
     clearInterval(timer);
     clearInterval(asnycTextTimer);
     clearTimeout(timerOut);
+    innerAudioContext.volume = 0
+    innerAudioContext.stop();
 
   },
 
@@ -469,6 +489,9 @@ Page({
     clearInterval(timer);
     clearInterval(asnycTextTimer);
     clearTimeout(timerOut);
+    innerAudioContext.volume = 0
+    innerAudioContext.stop();
+
   },
 
   /**
