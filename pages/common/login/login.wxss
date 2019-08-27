@@ -17,8 +17,8 @@ page{
 
 .login_logo {
     margin: 0 auto;
-    width: 200rpx;
-    height: 200rpx;
+    width: 112rpx;
+    height: 160rpx;
 }
 
 .bigbox{

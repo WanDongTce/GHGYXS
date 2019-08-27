@@ -1,6 +1,6 @@
 <image src='../../../images/train_login_bg.png' class='login_bg'></image>
 <view class='logo_box position_a'>
-<image src='{{logoimg}}' class='login_logo'></image>
+<image src='http://m.54xuebaxue.com/wx_img/img/XBX/logo.png' class='login_logo'></image>
 </view>
 <view class="bigbox">
     	
