@@ -63,9 +63,13 @@
             <image class="new_tab_img" src="../../images/home/tab5.png"></image>
             <view class='new_tab_text'>作业管理</view>
         </view>
-        <navigator class="new_tab" url="/pages/home/pages/broadcast/broadcast">
+        <!-- <navigator class="new_tab" url="/pages/home/pages/broadcast/broadcast">
             <image class="new_tab_img" src="../../images/home/tab4.png"></image>
             <view class='new_tab_text'>直播空间</view>
+        </navigator> -->
+         <navigator class="new_tab" url="/pages/home/pages/preview/preview">
+            <image class="new_tab_img" src="../../images/home/tab4.png"></image>
+            <view class='new_tab_text'>预习乐</view>
         </navigator>
         <navigator class="new_tab" url="/pages/home/pages/classmate/classmate">
             <image class="new_tab_img" src="../../images/home/tab3.png"></image>

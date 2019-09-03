@@ -2,7 +2,7 @@
 <!-- <compontNavbar title="新华课典" isShowBack="{{true}}" component-class="component-class"></compontNavbar> -->
 
 
-<navigat-bar class="navigation-box component-class" id="compontNavbar">
+<navigat-bar class="navigation-box" id="compontNavbar">
     <view class="back-box display-flex align-items-center"  >
         <image class="navigation-back-icon" src="../../../../images/arowLt.png" bindtap="goBack"></image>
         <image class='navigation_search' src="../../../../images/search.png" bindtap="goSearch"></image>
@@ -45,6 +45,7 @@
     </swiper>
     
 </view>
+
 <view class="tabs {{imgUrls.length==0?'mttab':''}}">
         <view class="new_tab" bindtap='mytop' data-mytopid="0">
             <image class="new_tab_img" src="/pages/home/images/courseList/course_img1.png"></image>
