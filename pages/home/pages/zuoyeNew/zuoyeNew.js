@@ -35,7 +35,7 @@ Page({
       // this.getQuestionList(false);
       //this.getZyList(false);   
       // this.getCheck();
-    this.getRenInfo();
+    // this.getRenInfo();
     //this.memberExpires();
 
       info = {};

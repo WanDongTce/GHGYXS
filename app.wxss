@@ -300,7 +300,7 @@ overflow: hidden;
 .integral_bottom_currenttext{
   color:#4bace2  !important;
 } */
-.p_lr_26{width: 95%}
+.p_lr_26{width: 95%;}
 .new_home_imgbox{display: block;}
 .new_home_imgbox navigator{float: left;width: 330rpx}
 .new_home_imgbox navigator:nth-child(1){margin-right: 42rpx}

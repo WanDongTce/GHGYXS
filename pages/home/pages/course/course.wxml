@@ -65,14 +65,14 @@
         </view>
 </view>
 
-<view class='p_lr_26'>
+<view style="padding: 0 13px;">
      <view class='coursebigtitle c_333 font_weight_b'>精品课程</view>
      
       <block wx:if="{{showEmpty}}">
         <empty></empty>
       </block>  
       
-      <view class='newcourse_itembox' wx:for="{{list}}" wx:key="this" bindtap='isExpires'  data-id="{{item.Id}}" data-myid="{{item.Id}}" data-videopic="{{item.PicUrl}}">
+      <view class='newcourse_itembox' wx:for="{{list}}" wx:key="this" bindtap='tz_detail'  data-id="{{item.Id}}" data-myid="{{item.Id}}" data-videopic="{{item.PicUrl}}">
         <view class='position_r'>
         
             <image wx:if="{{item.PicUrl}}" class='newcourse_topimg' src='{{item.PicUrl}}' mode='aspectFill' ></image>

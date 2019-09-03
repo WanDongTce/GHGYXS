@@ -527,7 +527,9 @@ Page({
     },
 
     tz_detail: function (e) {
-        this.memberExpires(e);
+      wx.navigateTo({
+        url: '/pages/home/pages/courseList/courseDetail/courseDetail?courseid=' + e.currentTarget.dataset.myid + '&videopic=' + e.currentTarget.dataset.videopic,
+      })
     },
   memberExpires(e) {
     var that = this;

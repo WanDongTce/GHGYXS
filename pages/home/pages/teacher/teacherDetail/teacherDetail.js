@@ -172,6 +172,8 @@ Page({
     });
   },
     toCourseDetail: function (e) {
-        this.memberExpires(e);
+      wx.navigateTo({
+        url: '/pages/home/pages/courseList/courseDetail/courseDetail?courseid=' + e.currentTarget.dataset.id
+      })
     }
 })
