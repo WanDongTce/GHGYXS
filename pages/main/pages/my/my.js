@@ -6,10 +6,16 @@ Page({
         base: '../../../../',
         IMGURL: app.imgUrl,
         info: '',
-        msgCount: 0
+        msgCount: 0,
+        showTab: true
     },
     onLoad(){
         this.compontNavbar = this.selectComponent("#compontNavbar");
+      if (app.userInfo.mobile == '17688976688') {
+        this.setData({
+          showTab: false
+        })
+      }  
     },
     onShow: function () {
         // console.log(app);

@@ -27,7 +27,7 @@ Page({
         showEmpty: false,
         
         renew_content:'',
-
+      showTab: true
         
     },
     onLoad: function(options) {
@@ -39,7 +39,12 @@ Page({
         that.getSwipImgs();
         this.setData({
             idname:app.idname
-        });       
+        });   
+      if (app.userInfo.mobile == '17688976688') {
+        this.setData({
+          showTab: false
+        })
+      }        
     },
     tz_little: function () {
         // console.log('111')
