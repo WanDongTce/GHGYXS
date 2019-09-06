@@ -278,8 +278,8 @@ page {
 }
 
 .new_tab_img {
-    width: 84rpx;
-    height: 84rpx;
+    width: 330rpx;
+    height: 123rpx;
 }
 
 .new_tab_text {
