@@ -51,7 +51,7 @@
     </view>
 </view>
 
-<view class='display-flex justify-content-around bgfff top_bottom_box border_bottom'>
+<!-- <view class='display-flex justify-content-around bgfff top_bottom_box border_bottom'>
     <navigator class='text-align-center' url="/pages/my/pages/learningRecords/learningRecords">
         <image src='{{base}}images/top_img1.png' class='top_img_item'></image>
         <view class='top_bottom_text2'>学习记录</view>
@@ -90,16 +90,16 @@
             <image src='{{base}}images/template_img17.png' class='template_img'></image>
             <view class='template_text2'>我的课程</view>
         </navigator>
-        <!-- <navigator  class='text-align-center w25 mt_two' url="/pages/my/pages/teacherDrawList/teacherDrawList">
+        <navigator  class='text-align-center w25 mt_two' url="/pages/my/pages/teacherDrawList/teacherDrawList">
             <image src='{{base}}images/template_img19.png' class='template_img'></image>
             <view class='template_text2'>作业批改</view>
-        </navigator> -->
+        </navigator>
         <navigator wx:if="{{info.isteacher==1}}" class='text-align-center w25 mt_two' url="/pages/my/pages/teacherDrawList/teacherDrawList">
             <image src='{{base}}images/template_img19.png' class='template_img'></image>
             <view class='template_text2'>作业批改</view>
         </navigator>
     </view>
-</view>
+</view> -->
 <view class='template_box bgfff'>
     <view class='template_text1'>会员</view>
     <view class='display-flex '>
@@ -139,7 +139,7 @@
         </navigator>
     </view>
 </view>
-<view  wx:if="{{showTab}}" class='template_box bgfff'>
+<!-- <view  wx:if="{{showTab}}" class='template_box bgfff'>
     <view class='template_text1'>日常</view>
     <view class='display-flex '>
         <navigator class='text-align-center w25' url="/pages/my/pages/service/service">
@@ -159,7 +159,7 @@
             <view class='template_text2'>我的学校</view>
         </navigator>
     </view>
-</view>
+</view> -->
 <view class='template_box bgfff border_bottom'>
     <view class='template_text1'>订单</view>
     <view class='display-flex '>

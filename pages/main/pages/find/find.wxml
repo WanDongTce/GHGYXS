@@ -19,7 +19,7 @@
     <text class="head-text-b">积分兑换</text>
   </view>
 </navigator> -->
-<navigator wx:if="{{showTab}}" class="head two" url="/pages/find/pages/encyclopedias/encyclopedias">
+<!-- <navigator wx:if="{{showTab}}" class="head two" url="/pages/find/pages/encyclopedias/encyclopedias">
   <image src="../../images/find/find_img2.png" class="head-img"></image>
   <view class="head-box">
     <view class="head-box-a">
@@ -27,7 +27,7 @@
     </view>
     <text class="head-text-b">早点看到这些,生活原来如此简单</text>
   </view>
-</navigator>
+</navigator> -->
 <!-- <navigator class="head two" url="/pages/find/pages/sport/sport">
   <image src="{{IMGURL}}find/motion.png" class="head-img"></image>
   <view class="head-box">
