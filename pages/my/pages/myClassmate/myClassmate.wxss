@@ -11,6 +11,7 @@ page {
     height: 30vh;
     margin: 35vh auto;
     text-align: center;
+    margin-top: 440rpx
 }
 
 .nodt-cont image {

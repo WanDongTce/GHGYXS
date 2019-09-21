@@ -41,6 +41,7 @@ page{
   font-size:34rpx;
   color:#382d20;
   margin-bottom:40rpx;
+  margin-top: 240rpx
 }
 button{
   border:1rpx solid #fff !important;
