@@ -16,6 +16,23 @@ Page({
     showNumBox: false,
     btnflag: '',
     commentList: [],
+    flg: false,
+  },
+  tolgon: function () {
+    var that = this
+    wx.navigateTo({
+      url: '/pages/common/login/login',
+    })
+    that.setData({
+      flg: false
+    })
+  },
+  nonelgon: function () {
+    var that = this
+
+    that.setData({
+      flg: false
+    })
   },
   onLoad: function (options) {
     id = options.id;
@@ -28,13 +45,32 @@ Page({
   },
   //点击收藏
   clickCollect:function(){
-    var that=this;
-    //已收藏改为未收藏
-    if (that.data.isCollect==1){
-      that.sendDel();
+    var token = wx.getStorageSync("userInfo")
+    var that=this
+    if (token == "") {
+      this.setData({
+        flg: true
+      })
+    } else {
+      if (that.data.isCollect == 1) {
+        that.sendDel();
+      }
+      else {
+        that.addCollect();
+      }
     }
-    else{
-      that.addCollect();
+  },
+  tocar: function () {
+    var token = wx.getStorageSync("userInfo")
+
+    if (token == "") {
+      this.setData({
+        flg: true
+      })
+    } else {
+      wx.navigateTo({
+        url: '/pages/main/pages/car/car'
+      })
     }
   },
   //收藏
@@ -174,9 +210,17 @@ Page({
   },
   //客服
   makePhone(e) {
-    wx.makePhoneCall({
-      phoneNumber: e.currentTarget.dataset.phone
-    })
+    var token = wx.getStorageSync("userInfo")
+
+    if (token == "") {
+      this.setData({
+        flg: true
+      })
+    } else {
+      wx.makePhoneCall({
+        phoneNumber: e.currentTarget.dataset.phone
+      })
+    }
   },
   modifNumClick(e) {
     var that = this;
@@ -286,10 +330,20 @@ Page({
   showNumBox(e) {
     // console.log(e)
     var that = this;
-    that.setData({
-      showNumBox: true,
-      btnflag: e.currentTarget.dataset.flag
-    });
+    var token = wx.getStorageSync("userInfo")
+
+    if (token == "") {
+      this.setData({
+        flg: true
+      })
+    } else {
+      that.setData({
+        showNumBox: true,
+        btnflag: e.currentTarget.dataset.flag
+      });
+
+
+    }
   },
   hideNumBox() {
     this.setData({

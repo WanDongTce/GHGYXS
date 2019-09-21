@@ -15,14 +15,14 @@
 </view>
 <!-- 入口 -->
 <view class="icon-nav">
-  <navigator url="/pages/dayuwen/pages/songdetail/songdetail" class="icon-nav-left">
+  <navigator url="" catchtap="songdetail" class="icon-nav-left">
     <image class="icon-img" src="http://m.54xuebaxue.com/wx_img/img/dayuwen/Recitation.png"></image>
     <view  class="nav-text">
       <text>诗歌朗诵</text>
       <text class="en-title">Poetry recitation</text>
     </view>
   </navigator>
-  <navigator url="/pages/ailangdu/pages/Match/Match" class="icon-nav-right">
+  <navigator url="" class="icon-nav-right" catchtap="Match">
     <image class="icon-img" src="http://m.54xuebaxue.com/wx_img/img/dayuwen/Match.png"></image>
     <view  class="nav-text">
       <text class="text-title">诵读比赛</text>
@@ -68,3 +68,13 @@
     </view>
   </view>
 </scroll-view>
+<view class="layer_box {{flg==false?'hide_sun':''}}">
+  <view class="layer">
+    <text class="name">您还没登录</text>
+    <text class="text">请先登录或注册再进行此操作</text>
+    <view class="btn" catchtap="tolgon">
+      <text>立即登录</text>
+    </view>
+    <text class="none" catchtap="nonelgon">暂不登录</text>
+  </view>
+</view>

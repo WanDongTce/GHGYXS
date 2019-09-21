@@ -42,6 +42,12 @@ Page({
                 //   console.log(res);
                 wx.hideLoading();
                 if (res.data.code == 200) {
+                  for (var i = 0; i < res.data.data[0].list.length; i++) {
+                    if (res.data.data[0].list[i].is_default == 2) {
+                      console.log(res.data.data[0].list)
+                      wx.setStorageSync('receivingAddress', res.data.data[0].list[i])
+                    }
+                  }
                     that.setData({
                         list: res.data.data[0].list
                     });

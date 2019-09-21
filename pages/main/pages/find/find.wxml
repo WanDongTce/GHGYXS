@@ -56,7 +56,7 @@
     <text class="head-text-b">校园动态你来发</text>
   </view>
 </navigator> -->
-<navigator class="head three" url="/pages/find/pages/news/news">
+<navigator class="head three" url="/pages/find/pages/news/news" catchtap="news">
   <image src="../../images/find/find_img6.png" class="head-img"></image>
   <view class="head-box">
     <view class="head-box-a">

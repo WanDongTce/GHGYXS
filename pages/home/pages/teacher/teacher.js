@@ -15,8 +15,38 @@ Page({
         sctdOptIdx: 0,
         animationData: null,
         showEmpty: false,
-        list: []
+        list: [],
+      flg: false,
     },
+  tolgon: function () {
+    var that = this
+    wx.navigateTo({
+      url: '/pages/common/login/login',
+    })
+    that.setData({
+      flg: false
+    })
+  },
+  nonelgon: function () {
+    var that = this
+
+    that.setData({
+      flg: false
+    })
+  },
+  teacherDetail: function (e) {
+    var token = wx.getStorageSync("userInfo")
+    var ido = e.currentTarget.dataset.id
+    if (token == "") {
+      this.setData({
+        flg: true
+      })
+    } else {
+      wx.navigateTo({
+        url: '/pages/home/pages/teacher/teacherDetail/teacherDetail?id=' + ido
+      })
+    }
+  },
     onLoad: function (options) {
         // console.log(app);
         this.compontNavbar = this.selectComponent("#compontNavbar");

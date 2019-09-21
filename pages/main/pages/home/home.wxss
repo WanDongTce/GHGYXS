@@ -1,11 +1,22 @@
 @import "./actyTemplate.wxss";
 @import "/component/navigation/navigation.wxss";
+.navigation-box{background:none}
+.navigation-tit {color: #fff}
+
 page {
     background: #fff;
     padding-top: 10vh;
+    background-image: url(http://m.54xuebaxue.com/wx_img/img/dakaiqiao/header.png);
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: 750rpx 582rpx;
 }
+.hide{display: none}
+.nav_box{margin-top: 48rpx}
+.nav_box .list{float: left;margin-bottom: 32rpx;width: 50%}
 
-
+.nav_box .list image{width: 340rpx;height:214rpx;display: block;box-shadow: 0px 19px 29.2px 10.8px rgba(254, 63, 71, 0.1);
+border-radius: 20rpx;margin: 0 auto }
 .back-box{ 
     width:150rpx;
 }
@@ -39,12 +50,15 @@ page {
 .swiper_img {
     width: 95%;
     height: 318rpx;
+   
+    overflow: hidden
 }
 
 .swiper_img image {
     width: 100%;
     height: 100%;
     display: block;
+    border-radius: 20rpx
 }
 
 .swiper_img navigator {
@@ -59,8 +73,10 @@ page {
     display: -webkit-flex;
     align-items: center;
     justify-content: space-around;
-    padding: 28rpx 0 24rpx;
+    padding: 60rpx 0 24rpx;
     margin-bottom: 16rpx;
+    margin-top: 77rpx;
+    border-radius: 45rpx 45rpx 0 0
 }
 
 .tab {
@@ -144,11 +160,15 @@ page {
     background: #fff;
     margin-bottom: 18rpx;
     overflow: hidden;
+    background-image: url(http://m.54xuebaxue.com/wx_img/img/dakaiqiao/bd.png);
+    background-size: 100%;
+    background-repeat: no-repeat
 }
 
 .h2 {
     /* width: 100%; */
-    padding: 37rpx 26rpx;   
+    padding: 37rpx 26rpx; 
+    padding-top: 0rpx  
 }
 
 .h2-lt {
@@ -278,8 +298,8 @@ page {
 }
 
 .new_tab_img {
-    width: 330rpx;
-    height: 123rpx;
+    width: 90rpx;
+    height: 90rpx;
 }
 
 .new_tab_text {
@@ -332,12 +352,13 @@ page {
 
 /* 精品课程 */
 .home_videoimg{
-  width:33rpx;
-  height:21rpx;  
+  width:26rpx;
+  height:26rpx;  
 }
 .newcourse_bigitembox{
     width:100%;
 }
+.newcourse_time{color: #E50015}
 .coursebigtitle{
     font-size:36rpx;
     margin-bottom:40rpx;
@@ -350,11 +371,14 @@ page {
 }
 .newcourse_bigtitle{
     margin:37rpx 0 37rpx 0;
+    margin-top: 0rpx
 }
+.text_new2 text{font-size: 24rpx;color: #fff;line-height: 40rpx;display: inline-block;background-color: #E50015;
+padding-left: 8rpx;padding-right: 8rpx;border-radius: 20rpx;margin-right: 24rpx}
 .newcourse_topimg{
   width:100%;
   margin-bottom:20rpx; 
-  border-radius: 6rpx;
+  border-radius: 15rpx;
 }
 .newcourse_title{
   line-height:42rpx;
@@ -418,7 +442,6 @@ page {
     display: inline-block;
 }
 .ateacher_box{
-    background-color:#f4f4f4;
     width:214rpx;
     height:275rpx;
     text-align: center;
@@ -427,22 +450,29 @@ page {
     margin-right:18rpx;
 }
 .ateacher_header{
-    width:102rpx;
-    height:102rpx;
+    width:136rpx;
+    height:136rpx;
     margin-top:26rpx;
     border-radius: 50%;
+    border:8rpx solid #f0f0f0
 }
+.title{display: block;width: 176rpx;height: 138rpx;margin: 0 auto}
+
 .c_f4{
     color:#f4f4f4;
 }
 .ateacher_h1{
-    line-height: 26rpx;
+    line-height: 30rpx;
     margin-top:20rpx;width:214rpx;
+    font-size: 30rpx;
+    color: #333333
 }
+.ateacher_h1 text{font-size: 24rpx;color: #999999}
 .ateacher_h2{
     line-height: 24rpx;
     margin-top:16rpx;width:214rpx;
     min-height: 24rpx;
+
 }
 .ateacher_bottombox{
     bottom:-33rpx;
@@ -462,34 +492,46 @@ page {
 /* 新闻公告 */
 .anews_box{
     width:100%;
-    height:28rpx;
-    line-height: 28rpx;
+    height:60rpx;
+    line-height: 60rpx;
     margin:30rpx 0;
 }
 .home_newsimg{
-    width:77rpx;
-    height: 28rpx;
+    width:100rpx;
+    height: 60rpx;
     display: block;
     margin-left:26rpx;
     margin-right:22rpx;
 }
+.more{
+    width:33rpx;
+    height: 24rpx;
+    display: block;
+    margin-left:26rpx;
+    margin-right:22rpx;
+    margin-top: 18rpx
+}
 .swiper_container {
   height: 55rpx;
-  width: 590rpx;
+  width: 493rpx;
+  margin-left: 42rpx;
+  border-left: 2rpx solid #cccccc
 }
-
-.swiper_item {
+.swiper{ width: 493rpx;}
+.view {
   font-size: 26rpx;
   color:#333;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   letter-spacing: 2px;
-  line-height: 28rpx;
+  line-height: 60rpx;
 }
+.swiper_item{margin-left: 40rpx}
 .new_home_imgbox{
     /* padding:0 26rpx; */
 }
+.newcourse_bigtitle image{width: 404rpx;height: 100rpx;display: block;margin: 0 auto}
 .new_home_imgbox{
     justify-content: space-around;
     
@@ -543,3 +585,27 @@ button.pop-btn::after{
   overflow: hidden;
 }
 
+.swiper_item {
+ font-size: 25rpx;
+ overflow: hidden;
+ text-overflow: ellipsis;
+ white-space: nowrap;
+ letter-spacing: 2px;
+}
+.swiper_container {
+ height: 55rpx;
+ width: 493rpx;
+}
+.hide_sun{display:none !important;}
+.layer_box{position: fixed;width: 100%; height: 100%;background-color: rgba(0, 0, 0, 0.7);left: 0;top: 0;
+display: flex;align-items: center;justify-content: center;}
+.layer_box .layer{width: 624rpx;height: 728rpx;background-image:url(http://m.54xuebaxue.com/wx_img/img/login/bd01.png);background-size: 100% 100%}
+.layer_box .layer .name{font-size: 38rpx; color: #333333;padding-top: 382rpx;display: block;text-align: center;
+height: 38rpx;line-height: 38rpx}
+.layer_box .layer .text{font-size: 30rpx;color: #999999;display: block;text-align: center}
+.layer_box .layer .btn{width: 532rpx;height: 82rpx;   background-image: -moz-linear-gradient( 0deg, rgb(255,184,99) 0%, rgb(255,189,62) 50%, rgb(243,165,14) 100%);
+  background-image: -webkit-linear-gradient( 0deg, rgb(255,184,99) 0%, rgb(255,189,62) 50%, rgb(243,165,14) 100%);
+  background-image: -ms-linear-gradient( 0deg, rgb(255,184,99) 0%, rgb(255,189,62) 50%, rgb(243,165,14) 100%);
+  border-radius: 41rpx;text-align: center;line-height: 82rpx;margin: 0 auto;color: #fff;font-size: 30rpx;margin-top: 70rpx}
+  .layer_box .layer .none{font-size: 30rpx;color: #F3A50F;display: block;text-align: center;height: 30rpx;line-height: 30rpx;
+  margin-top: 32rpx}

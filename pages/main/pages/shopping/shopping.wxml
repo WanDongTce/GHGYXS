@@ -1,4 +1,4 @@
-<view class="header"><text>商铺</text><view class='reton_sun' bindtap='topshoop'><image src='/pages/main/images/shopping/car.png' class='reton'></image>
+<view class="header"><text>商铺</text><view class="reton_sun02" catchtap="retonsun"><image src='/pages/main/images/shopping/arowLt.png' class='reton'></image></view><view class='reton_sun' bindtap='topshoop'><image src='/pages/main/images/shopping/car.png' class='reton'></image>
   <view class='inf {{number_sun>0?"bl":""}}'></view>
 </view></view>
 <view class='list_box' style='height:{{hh}}'hidden="{{show}}">
@@ -71,3 +71,13 @@
   </view>
   <view class='clearfix'></view>
 </view> -->
+<view class="layer_box {{flg==false?'hide_sun':''}}">
+  <view class="layer">
+    <text class="name">您还没登录</text>
+    <text class="text">请先登录或注册再进行此操作</text>
+    <view class="btn" catchtap="tolgon">
+      <text>立即登录</text>
+    </view>
+    <text class="none" catchtap="nonelgon">暂不登录</text>
+  </view>
+</view>

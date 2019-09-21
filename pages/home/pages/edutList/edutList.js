@@ -13,7 +13,8 @@ Page({
         course_gg: '',
         course_wk: '',
         course: '',
-        imgUrls: []
+        imgUrls: [],
+      flg: false,
     },
     onLoad: function (options) {
         this.compontNavbar = this.selectComponent("#compontNavbar");
@@ -114,7 +115,14 @@ Page({
       })
     },
     tz_detail: function (e) {   
-      this.memberExpires(e);
+      var token = wx.getStorageSync("userInfo")
+      if (token == "") {
+        this.setData({
+          flg: true
+        })
+      } else {
+        this.memberExpires(e);
+      }
       // console.log(e.currentTarget.dataset)  
     },
     getSwipImgs: function () {
@@ -166,5 +174,99 @@ Page({
         middle: false
       }
     });
+  },
+  tonav01: function () {
+    var token = wx.getStorageSync("userInfo")
+
+    if (token == "") {
+      this.setData({
+        flg: true
+      })
+    } else {
+      wx.navigateTo({
+        url: '/pages/home/pages/preview/preview',
+      })
+    }
+  },
+  tonav02: function () {
+    var token = wx.getStorageSync("userInfo")
+
+    if (token == "") {
+      this.setData({
+        flg: true
+      })
+    } else {
+      wx.navigateTo({
+        url: '/pages/home/pages/think/think',
+      })
+    }
+  },
+  tonav03: function () {
+    var token = wx.getStorageSync("userInfo")
+
+    if (token == "") {
+      this.setData({
+        flg: true
+      })
+    } else {
+      wx.navigateTo({
+        url: '/pages/home/pages/game/gameList/gameList?gametype=1&title=明日之星',
+      })
+    }
+  },
+  tonav04: function () {
+    var token = wx.getStorageSync("userInfo")
+
+    if (token == "") {
+      this.setData({
+        flg: true
+      })
+    } else {
+      wx.navigateTo({
+        url: '/pages/home/pages/game/gameList/gameList?gametype=2&title=王者之战',
+      })
+    }
+  },
+  tonav05: function () {
+    var token = wx.getStorageSync("userInfo")
+
+    if (token == "") {
+      this.setData({
+        flg: true
+      })
+    } else {
+      wx.navigateTo({
+        url: '/pages/home/pages/game/gameList/gameList?gametype=3&title=挑战赛',
+      })
+    }
+  },
+  tonav06: function () {
+    var token = wx.getStorageSync("userInfo")
+
+    if (token == "") {
+      this.setData({
+        flg: true
+      })
+    } else {
+      wx.navigateTo({
+        url: '/pages/home/pages/game/gameList/gameList?gametype=4&title=过关斩将',
+      })
+    }
+  },
+  tolgon: function () {
+    var that = this
+    wx.navigateTo({
+      url: '/pages/common/login/login',
+    })
+    that.setData({
+      flg: false
+    })
+  },
+  nonelgon: function () {
+    var that = this
+
+    that.setData({
+      flg: false
+    })
   },
 })

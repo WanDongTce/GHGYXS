@@ -31,17 +31,18 @@ function requesttools(method, requestHandler, flag) {
         method: method,
         success: function (res) {
             // console.log(res);
-            if (res.data.code == "508" || res.data.code == "403") {
-                wx.showToast({
-                    title: res.data.message,
-                    success: function () {
-                        app.toLogin();
-                    },
-                    icon: 'none'
-                });
-            } else {
-                requestHandler.success(res);
-            }
+            // if (res.data.code == "508" || res.data.code == "403") {
+            //     wx.showToast({
+            //         title: res.data.message,
+            //         success: function () {
+            //             app.toLogin();
+            //         },
+            //         icon: 'none'
+            //     });
+            // } else {
+               
+            // }
+          requestHandler.success(res);
         },
         fail: function () {
             requestHandler.fail();
@@ -65,7 +66,7 @@ function getNews(page, callback, errCallback) {
         url: 'v14/news/list',
         params: {
             "mobile": app.userInfo.mobile,
-            "token": app.userInfo.token,
+            // "token": app.userInfo.token,
             "page": page
         },
         success: function (res) {
@@ -82,7 +83,7 @@ function getTeacher(page, position,callback, errCallback) {
         url: 'v13/nteacher/teacher-hot',
         params: {
             "mobile": app.userInfo.mobile,
-            "token": app.userInfo.token,
+            // "token": app.userInfo.token,
             "page": page,
             "position": position
         },
@@ -482,7 +483,7 @@ function getSwiperImgs(pos, callback) {
         url: 'v14/adv/fudao',
         params: {
             "mobile": app.userInfo.mobile,
-            "token": app.userInfo.token,
+           
             "type": app.swiperImgType,
             "position": pos
         },

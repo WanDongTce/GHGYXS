@@ -248,7 +248,7 @@ page{
 }
 .cb_lightgreen{background-color:#4bace2; }
 .c_gf{
-    color:#4bace2;
+    color:#fff;
 }
 .c_gf_bg{
     background-color:#4bace2;

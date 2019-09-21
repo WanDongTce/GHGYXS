@@ -12,15 +12,74 @@ Page({
     list: [],
     hasmore: true,
     page: 1,
-    currentSwiper: 0
+    currentSwiper: 0,
+    flg: false,
+    XBX: "",
+    dictionary: "",
+    homework: "",
+    quality: "",
+    space: "",
+    book: "",
+    bok: "",
+    shop: "",
+    accumulation: "",
  },
+
   //热门以及推荐
   goTo: function (e) {
     var postad = e.currentTarget.dataset.postad
     console.log(postad)
-    wx.navigateTo({
-      url: '/pages/dayuwen/pages/Ranking/Ranking?id=' + postad 
+    var token = wx.getStorageSync("userInfo")
+
+    if (token == "") {
+      this.setData({
+        flg: true
+      })
+    } else {
+      wx.navigateTo({
+        url: '/pages/dayuwen/pages/Ranking/Ranking?id=' + postad
+      })
+    }
+   
+  },
+  getshow: function () {
+    var that = this
+    wx.request({
+      url: app.requestUrl + 'v14/public/switch',
+      data: {},
+      method: "POST",
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      success: function (res) {
+        console.log(res)
+        var header = JSON.parse(res.data.data[0].list[0].header);
+        var middle = JSON.parse(res.data.data[0].list[0].middle);
+        var mine = JSON.parse(res.data.data[0].list[0].mine);
+        wx.setStorageSync("header", header)
+        wx.setStorageSync("middle", middle)
+        wx.setStorageSync("mine", mine)
+
+        // that.setData({
+        //   home_header: res.data.data[0].list[0].home_header,
+        // home_middle: res.data.data[0].list[0].home_middle
+        // })
+      }
     })
+  },
+  songdetail:function(){
+    var that = this;
+    var token = wx.getStorageSync("userInfo")
+
+    if (token == "") {
+      this.setData({
+        flg: true
+      })
+    } else {
+      wx.navigateTo({
+        url: '/pages/dayuwen/pages/songdetail/songdetail'
+      })
+    }
   },
   changeTab: function(e){
     if(e){
@@ -43,7 +102,7 @@ Page({
       },
       data: {
         "mobile": app.userInfo.mobile,
-        "token": app.userInfo.token,
+        // "token": app.userInfo.token,
         "app_source_type": app.app_source_type,
         "type": that.data.current,
         "page": that.data.page
@@ -72,9 +131,18 @@ Page({
     var luyin_id = e.currentTarget.dataset.luyin;
     var luyin_praisenum = e.currentTarget.dataset.praisenum;
     var audio_id = e.currentTarget.dataset.audio;
-    wx.navigateTo({
-      url: "/pages/ailangdu/pages/listen/listen?id=" + luyin_id + "&good=" + luyin_praisenum + "&scid=" + audio_id
-    })
+    var token = wx.getStorageSync("userInfo")
+
+    if (token == "") {
+      this.setData({
+        flg: true
+      })
+    } else {
+      wx.navigateTo({
+        url: "/pages/ailangdu/pages/listen/listen?id=" + luyin_id + "&good=" + luyin_praisenum + "&scid=" + audio_id
+      })
+    }
+    
   },
   // swiper
   change: function (e) {
@@ -99,9 +167,55 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
+  tolgon: function () {
+    var that = this
+    wx.navigateTo({
+      url: '/pages/common/login/login',
+    })
+    that.setData({
+      flg: false
+    })
+  },
+  nonelgon: function () {
+    var that = this
+
+    that.setData({
+      flg: false
+    })
+  },
+  songdetail:function(){
+    var that = this;
+    var token = wx.getStorageSync("userInfo")
+
+    if (token == "") {
+      this.setData({
+        flg: true
+      })
+    } else {
+      wx.navigateTo({
+        url: '/pages/dayuwen/pages/songdetail/songdetail'
+      })
+    }
+  },
+  Match: function () {
+    var that = this;
+    var token = wx.getStorageSync("userInfo")
+
+    if (token == "") {
+      this.setData({
+        flg: true
+      })
+    } else {
+      wx.navigateTo({
+        url: '/pages/ailangdu/pages/Match/Match'
+      })
+    }
+  },
   onLoad: function (options) {
+    var that=this
     this.getSwipImgs();
     this.getList();
+    that.getshow()
   },
 
   /**

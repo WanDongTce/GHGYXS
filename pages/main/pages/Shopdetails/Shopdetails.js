@@ -20,7 +20,8 @@ Page({
     sopid: "",
     imgurl: [],
     type_list: [],
-    hh:""
+    hh:"",
+    flg: false,
 
   },
 
@@ -72,6 +73,23 @@ Page({
   onReady: function () {
     
   },
+  tolgon: function () {
+    var that = this
+    wx.navigateTo({
+      url: '/pages/common/login/login',
+    })
+    that.setData({
+      flg: false
+    })
+  },
+
+  nonelgon: function () {
+    var that = this
+
+    that.setData({
+      flg: false
+    })
+  },
   getlist: function () {
     var _this = this
     network.POST({
@@ -114,11 +132,11 @@ Page({
           })
 
         } else {
-          wx.showToast({
-            title: res.data.message,
-            icon: 'none',
-            duration: 1000
-          })
+          // wx.showToast({
+          //   title: res.data.message,
+          //   icon: 'none',
+          //   duration: 1000
+          // })
         }
       },
       fail: function () {
@@ -160,11 +178,11 @@ Page({
             list_sun: yucunlisr
           })
         } else {
-          wx.showToast({
-            title: res.data.message,
-            icon: 'none',
-            duration: 1000
-          })
+          // wx.showToast({
+          //   title: res.data.message,
+          //   icon: 'none',
+          //   duration: 1000
+          // })
         }
       },
       
@@ -182,54 +200,62 @@ Page({
    * 生命周期函数--监听页面显示
    */
   addCount: function (e) {
+    var that = this;
+    var token = wx.getStorageSync("userInfo")
 
-    const index = e.currentTarget.dataset.id;
-    let carts = this.data.list_sun;
-    let sid = ""
-    carts = carts.map(function (item) {
-      if (item.id == index) {
-        item.cart_num = parseInt(item.cart_num) + 1
-        sid = item.s_id
-      }
+    if (token == "") {
+      this.setData({
+        flg: true
+      })
+    } else {
+      const index = e.currentTarget.dataset.id;
+      let carts = this.data.list_sun;
+      let sid = ""
+      carts = carts.map(function (item) {
+        if (item.id == index) {
+          item.cart_num = parseInt(item.cart_num) + 1
+          sid = item.s_id
+        }
 
-      return item;
-    })
+        return item;
+      })
 
-    this.setData({
-      list_sun: carts
-    })
-    network.POST({
+      this.setData({
+        list_sun: carts
+      })
+      network.POST({
 
-      url: 'v13/shop-cart/add',
-      params: {
-        "mobile": app.userInfo.mobile,
-        "token": app.userInfo.token,
-        "num": 1,
-        "s_id": sid
+        url: 'v13/shop-cart/add',
+        params: {
+          "mobile": app.userInfo.mobile,
+          "token": app.userInfo.token,
+          "num": 1,
+          "s_id": sid
 
-      },
-      success: function (res) {
+        },
+        success: function (res) {
 
-        wx.hideLoading();
+          wx.hideLoading();
 
-        if (res.data.code == 200) {
-        } else {
+          if (res.data.code == 200) {
+          } else {
+            wx.showToast({
+              title: res.data.message,
+              icon: 'none',
+              duration: 1000
+            })
+          }
+        },
+        fail: function () {
+          wx.hideLoading();
           wx.showToast({
-            title: res.data.message,
+            title: '服务器异常',
             icon: 'none',
             duration: 1000
           })
         }
-      },
-      fail: function () {
-        wx.hideLoading();
-        wx.showToast({
-          title: '服务器异常',
-          icon: 'none',
-          duration: 1000
-        })
-      }
-    });
+      });
+    }
   },
 
 
@@ -317,11 +343,11 @@ Page({
             currentTab: dataindex
           })
         } else {
-          wx.showToast({
-            title: res.data.message,
-            icon: 'none',
-            duration: 1000
-          })
+          // wx.showToast({
+          //   title: res.data.message,
+          //   icon: 'none',
+          //   duration: 1000
+          // })
         }
       },
       fail: function () {

@@ -8,7 +8,29 @@ Page({
    * 页面的初始数据
    */
   data: {
-    number_sun:0
+    number_sun:0,
+    flg: false,
+  },
+  retonsun:function(){
+    wx.navigateBack({
+      delta: 1,
+    })
+  },
+  tolgon: function () {
+    var that = this
+    wx.navigateTo({
+      url: '/pages/common/login/login',
+    })
+    that.setData({
+      flg: false
+    })
+  },
+  nonelgon: function () {
+    var that = this
+
+    that.setData({
+      flg: false
+    })
   },
   getList: function (page) {
     var that = this;
@@ -65,11 +87,11 @@ Page({
               })
 
             } else {
-              wx.showToast({
-                title: res.data.message,
-                icon: 'none',
-                duration: 1000
-              })
+              // wx.showToast({
+              //   title: res.data.message,
+              //   icon: 'none',
+              //   duration: 1000
+              // })
             }
           },
           fail: function () {
@@ -99,10 +121,19 @@ Page({
     })
   },
   topshoop:function(){
-    wx.navigateTo({
-      // url: '/pages/main/pages/Shopdetails/Shopdetails'  //跳转详情页  切记配置app.json文件 
-      url: '/pages/main/pages/car/car'
-    })
+    var token = wx.getStorageSync("userInfo")
+    console.log(token)
+    if (token == "") {
+      this.setData({
+        flg: true
+      })
+    } else {
+      wx.navigateTo({
+        // url: '/pages/main/pages/Shopdetails/Shopdetails'  //跳转详情页  切记配置app.json文件 
+        url: '/pages/main/pages/car/car'
+      })
+    }
+    
   },
   onLoad: function (options) {
     var that = this
@@ -179,9 +210,9 @@ Page({
            number_sun:a
          })
         } else {
-          wx.showToast({
-            title: res.data.message
-          });
+          // wx.showToast({
+          //   title: res.data.message
+          // });
         }
       },
       fail: function () {
