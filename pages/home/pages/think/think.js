@@ -149,39 +149,39 @@ Page({
         this.getContList(false);
     },
     toDetail(e) {
-        this.memberExpires(e); 
+      var a = e.currentTarget.dataset;
+      // console.log(a);
+      var start_time = Date.parse(new Date()) / 1000;
+      var end_time = start_time + 5;
+      network.getAddStudyRecord(2, a.id, start_time, end_time, function (res) {
+        wx.hideLoading();
+        if (res.data.code == 200) {
+          wx.navigateTo({
+            url: '/pages/common/webView/webView?src=' + a.href + '&getpointype=2&studyid=' + a.id
+          })
+        }
+        else {
+          wx.showToast({
+            title: res.data.message,
+            icon: 'none',
+            duration: 1000
+          })
+        }
+      }, function () {
+        wx.hideLoading();
+        wx.showToast({
+          title: '服务器异常',
+          icon: 'none',
+          duration: 1000
+        });
+      });
     },
     memberExpires(e) {
         var that = this;
         network.memberExpires(function (res) {
           that.toggle('middle');
         },function(res){
-          var a = e.currentTarget.dataset;
-          // console.log(a);
-          var start_time = Date.parse(new Date()) / 1000;
-          var end_time = start_time + 5;
-          network.getAddStudyRecord(2, a.id, start_time, end_time, function (res) {
-            wx.hideLoading();
-            if (res.data.code == 200) {
-              wx.navigateTo({
-                url: '/pages/common/webView/webView?src=' + a.href + '&getpointype=2&studyid=' + a.id
-              })
-            }
-            else {
-              wx.showToast({
-                title: res.data.message,
-                icon: 'none',
-                duration: 1000
-              })
-            }
-          }, function () {
-            wx.hideLoading();
-            wx.showToast({
-              title: '服务器异常',
-              icon: 'none',
-              duration: 1000
-            });
-          });
+
         });
     },
     onUnload: function () {

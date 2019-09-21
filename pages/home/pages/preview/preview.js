@@ -150,35 +150,35 @@ Page({
         return timestamp
     },
     toDetail(e){
-        this.isExpires(e); 
-        // var a = e.currentTarget.dataset;
-        // console.log(a);
-        // var start_time = Date.parse(new Date())/1000;
-        // var end_time = start_time+5;
+        // this.isExpires(e); 
+        var a = e.currentTarget.dataset;
+        console.log(a);
+        var start_time = Date.parse(new Date())/1000;
+        var end_time = start_time+5;
         
-        // // (type, typeid, start_time, end_time, callback, errCallback)
-        // network.getAddStudyRecord(1, a.id, start_time, end_time,function (res) {
-        //     wx.hideLoading();
-        //     if (res.data.code == 200) {
-        //         wx.navigateTo({
-        //             url: '/pages/common/webView/webView?src=' + a.href + '&getpointype=1&studyid=' + a.id
-        //         })
-        //     }
-        //     else {
-        //         wx.showToast({
-        //             title: res.data.message,
-        //             icon: 'none',
-        //             duration: 1000
-        //         })
-        //     }
-        // }, function () {
-        //     wx.hideLoading();
-        //     wx.showToast({
-        //         title: '服务器异常',
-        //         icon: 'none',
-        //         duration: 1000
-        //     });
-        // });
+        // (type, typeid, start_time, end_time, callback, errCallback)
+        network.getAddStudyRecord(1, a.id, start_time, end_time,function (res) {
+            wx.hideLoading();
+            if (res.data.code == 200) {
+                wx.navigateTo({
+                    url: '/pages/common/webView/webView?src=' + a.href + '&getpointype=1&studyid=' + a.id
+                })
+            }
+            else {
+                wx.showToast({
+                    title: res.data.message,
+                    icon: 'none',
+                    duration: 1000
+                })
+            }
+        }, function () {
+            wx.hideLoading();
+            wx.showToast({
+                title: '服务器异常',
+                icon: 'none',
+                duration: 1000
+            });
+        });
         
     },
     isExpires(e) {

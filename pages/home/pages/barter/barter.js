@@ -18,7 +18,8 @@ Page({
         showEmpty: false,
         showSearch: false,
         refreshFlag: true,
-        base: '../../../../'
+        base: '../../../../',
+      flg: false,
     },
     onLoad: function (options) {
         var that = this;
@@ -36,6 +37,25 @@ Page({
             that.getBarterList(page, flag, '');
         }
     },
+  tolgon: function () {
+    var that = this
+    wx.navigateTo({
+      url: '/pages/common/login/login',
+    })
+    that.setData({
+      flg: false
+    })
+  },
+
+  nonelgon: function () {
+    var that = this
+
+    that.setData({
+      flg: false
+    })
+    console.log(111)
+
+  },
     swiTab: function (e) {
         var that = this;
         var a = parseInt(e.currentTarget.dataset.index);
@@ -195,11 +215,20 @@ Page({
             url: '/pages/home/pages/barter/barterDetail/barterDetail?id=' + e.currentTarget.dataset.myid
         })
     },
-    toRelaeaseBarter: function () {
-        wx.navigateTo({
-            url: '/pages/home/pages/barter/releaseBarter/releaseBarter'
-        })
-    },
+  toRelaeaseBarter: function () {
+    var token = wx.getStorageSync("userInfo")
+
+    if (token == "") {
+      this.setData({
+        flg: true
+      })
+    } else {
+      wx.navigateTo({
+        url: '/pages/home/pages/barter/releaseBarter/releaseBarter'
+      })
+    }
+
+  },
     tz_classify: function () {
         wx.navigateTo({
             url: '/pages/home/pages/barter/classBarter/classBarter'
