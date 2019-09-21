@@ -1,7 +1,6 @@
 /* pages/ailangdu//pages/index/index.wxss */
 .clearfix{clear: both}
 .banner{
-  margin-top: 30rpx;
   margin-bottom: 30rpx;
 }
 .navigator{display: block;margin: 0 auto}

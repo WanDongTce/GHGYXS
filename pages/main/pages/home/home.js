@@ -423,6 +423,7 @@ Page({
         network.getNews(1, function(res) {
             wx.hideLoading();
             var a = res.data.data[0].list;
+            console.log(a)
             if (res.data.code == 200) {
                 that.setData({
                     newsList: a,

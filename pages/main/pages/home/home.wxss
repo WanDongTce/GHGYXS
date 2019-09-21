@@ -20,6 +20,7 @@ border-radius: 20rpx;margin: 0 auto }
 .back-box{ 
     width:150rpx;
 }
+.nav_box{width: 100%}
 .component-class{
     /* background-color:#61ACE3; */
 }
@@ -527,7 +528,8 @@ padding-left: 8rpx;padding-right: 8rpx;border-radius: 20rpx;margin-right: 24rpx}
   letter-spacing: 2px;
   line-height: 60rpx;
 }
-.swiper_item{margin-left: 40rpx}
+.swiper_item{margin-left: 40rpx;padding-left: 60rpx; background-image: url(http://m.54xuebaxue.com/wx_img/img/dakaiqiao/hot.png);
+    background-repeat: no-repeat;background-position:left center;background-size: 54rpx 32rpx;}
 .new_home_imgbox{
     /* padding:0 26rpx; */
 }

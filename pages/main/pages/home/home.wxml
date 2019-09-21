@@ -140,7 +140,7 @@
         <image src="http://m.54xuebaxue.com/wx_img/img/dakaiqiao/nav02.png"></image>
         </navigator>
       </view>
-       <view class="list {{shop==0?'hide':''}}">
+       <!-- <view class="list {{shop==0?'hide':''}}">
         <navigator url="/pages/main/pages/shopping/shopping">
           <image src="http://m.54xuebaxue.com/wx_img/img/dakaiqiao/nav03.png"></image>
         </navigator>
@@ -149,7 +149,7 @@
        <navigator  catchtap="integralMall">
           <image src="http://m.54xuebaxue.com/wx_img/img/dakaiqiao/nav04.png"></image>
        </navigator>
-      </view>
+      </view> -->
     </view>
 
     <!-- 在线名师new -->
